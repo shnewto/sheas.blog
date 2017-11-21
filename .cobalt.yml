@@ -1,0 +1,3 @@
+name: cobalt blog
+source: "."
+dest: "./_site"
