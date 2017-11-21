@@ -1,3 +1,6 @@
-name: cobalt blog
+name: shea newton
 source: "."
 dest: "./_site"
+posts: "posts"
+drafts: "_drafts"
+post_order: "asc"

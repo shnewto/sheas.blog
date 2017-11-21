@@ -1,9 +1,7 @@
 extends: default.liquid
 ---
-## Blog!
+## Shea Newton
 
 {% for post in posts %}
-#### {{post.title}}
-
 #### [{{ post.title }}]({{ post.path }})
 {% endfor %}
