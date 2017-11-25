@@ -1,20 +1,47 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if is_post %}
-          <title>{{ title }}</title>
-        {% else %}
-          <title>shea newton</title>
-        {% endif %}
-    </head>
-    <body>
-    <div>
-      {% if is_post %}
-        {% include '_layouts/post.liquid' %}
-      {% else %}
-        {{ content }}
-      {% endif %}
-    </div>
+<html lang="en">
+  <head>
+    <style>
+    {% include assets/main.css %}
+    </style>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+
+    {% if title != "" %}
+    <title>{{ title | append: " | Shea Newton" }}</title>
+    {%- else %}
+    <title>{{ "Shea Newton" }}</title>
+    {%- endif %}
+
+    <meta name="author" content="Shea Newton">
+    <meta name="description" content="TODO: Content description"/>
+  </head>
+  <body>
+        <header>
+            <a class="logo" href="/">
+              <img alt="Home" src="/img/me.jpg"/>
+            </a>
+            <p>
+              Writes software, talks to hardware.<br>
+              &lt;mood&gt; ::= "🙃"|"🙀"|"😬"|"🐋"
+            </p>
+            <nav>
+              <ul>
+                <li><a href="/">Home</a></li>
+              </ul>
+            </nav>
+        </header>
+        <main role="main">
+            {% if humandate %}
+              <div class="published-date">
+                <i>Published on {{ humandate }}</i>
+              </div>
+            {% endif %}
+            {%- if title != "" %}
+              <h1>{{ title }}</h1>
+            {%- endif %}
+            {{ content }}
+        </main>
   </body>
 </html>
