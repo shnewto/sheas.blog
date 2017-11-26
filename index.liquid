@@ -5,7 +5,7 @@ title: "Shea's Blog"
 {% for post in posts %}
   <article>
     <div class="published-date">
-      <i>{{ post.humandate }}</i>
+      <i>{{ post.calendardate }}</i>
     </div>
     <h2><a href="{{ post.path }}">{{ post.title }}</a></h2>
     {% if post.excerpt %}

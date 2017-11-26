@@ -2,8 +2,8 @@ extends: default.liquid
 
 title: cobalt.rs and now 
 draft: false 
-date: 26 Nov 2017 21:19:00 +0000 
-calendardate: November 25, 2017 
+date: 26 Nov 2017 15:05:00 +0000 
+calendardate: November 26, 2017 
 path: 2017/cobalt-and-now
 
 ---
@@ -57,11 +57,11 @@ directory without gaining anything from it and finally had something I thought
 I could run with.
 But now what? I've been working on projects that can safely be called software 
 for about 5 years and I've never cemented how to go from local files to 
-a live website. 🙃. Where does all that happen? Do I need a hosting account? 
+a live website. 🙃. Where does all that happen? Do I need a "hosting" account? 
 Which one? I've heard the words _Digital Ocean droplet_, that's probably
 something... Then I remembered a video I'd been recommended by a friend ages 
 ago on [now & next](https://www.youtube.com/watch?v=__b6k2pR3Tg&t=5s), 
-Node packages that I didn't really have an application 
+Node packages that I didn't really have an application for
 at the time. I thought I'd try it out. And damn, __now__ is a super power. 
 
 Here were the steps I took to get my blog up and running during development:
