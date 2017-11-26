@@ -1,4 +1,6 @@
-﻿html,
+﻿/* Styling based on https://github.com/mre/mre.github.io/blob/source/assets/main.css */
+
+html,
 body,
 div,
 form,
@@ -219,20 +221,8 @@ object::after {
     float: left;
     width: 210px;
   }
-  main,
-  footer {
+  main{
     margin-left: 260px;
     margin-bottom: 40px;
   }
-}
-.post-navigation {
-  margin-bottom: 10px;
-}
-footer {
-  border-top: 1px solid #ffff;
-  margin-bottom: 40px;
-}
-footer .links {
-  list-style: none;
-  display: inline;
 }
