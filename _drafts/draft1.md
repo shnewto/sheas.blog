@@ -1,4 +1,4 @@
-extends: post.liquid
+extends: default.liquid
 
 title: First Draft Post
 draft: true
