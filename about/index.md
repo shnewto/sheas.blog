@@ -20,3 +20,6 @@ More:
 * [Github](http://github.com/snewt/)
 * [Twitter](https://twitter.com/shnewto/)
 * [LinkedIn](https://www.linkedin.com/in/sheanewton/)
+
+Blog source:
+* [blog.sheanewton.com repo](https://github.com/snewt/blog.sheanewton.com)
