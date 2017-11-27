@@ -55,13 +55,13 @@ Okay, I dug in, hacked some CSS, learned what I could and couldn't do with
 Markdown, fought the urge to duplicate the __.liquid__ files in the __\_layouts__
 directory without gaining anything from it and finally had something I thought 
 I could run with.
-But now what? I've been working on projects that can safely be called software 
-for about 5 years and I've never cemented how to go from local files to 
-a live website. 🙃. Where does all that happen? Do I need a "hosting" account? 
+But now what? I've been getting paid to write software 
+for around 6 years and I've never cemented how to go from local files to 
+a live website. 🙃. Where does all that happen? Do I need a _hosting_ account? 
 Which one? I've heard the words _Digital Ocean droplet_, that's probably
 something... Then I remembered a video I'd been recommended by a friend ages 
 ago on [now & next](https://www.youtube.com/watch?v=__b6k2pR3Tg&t=5s), 
-Node packages that I didn't really have an application for
+Node.js packages that I didn't really have an application for
 at the time. I thought I'd try it out. And damn, __now__ is a super power. 
 
 Here were the steps I took to get my blog up and running during development:
@@ -75,7 +75,8 @@ something that blew my mind.
 
 ### Final thoughts
 Getting a blog up and running took some leveling up but because of some
-great tools it didn't take a ton of time. It was a weekend's work. 
+great tools and the work of others to learn from, it didn't take a ton of time.
+It was the work of a weekend and a lot of it was experimentation. 
 My experiences with both __cobalt.rs__ and __now__ were hugely positive and
 I recommend both for anyone interested in starting something from scratch or 
 just exploring some new tooling.
