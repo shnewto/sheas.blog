@@ -123,15 +123,6 @@ blockquote {
   margin: 4px 10px;
   padding: 3px 20px;
 }
-/* code {
-    border-radius: 5px; 
-    -moz-border-radius: 5px; 
-    -webkit-border-radius: 5px; 
-    background-color: #BCBEC0;
-    border: 1px solid #BCBEC0;
-    padding: 2px;
-    font:12px Monaco,Consolas,"Andale  Mono","DejaVu Sans Mono",monospace
-} */
 code {
   background-color: #BCBEC0;
   border: 1px solid #BCBEC0;
