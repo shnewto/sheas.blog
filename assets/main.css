@@ -123,26 +123,30 @@ blockquote {
   margin: 4px 10px;
   padding: 3px 20px;
 }
+/* code {
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    background-color: #BCBEC0;
+    border: 1px solid #BCBEC0;
+    padding: 2px;
+    font:12px Monaco,Consolas,"Andale  Mono","DejaVu Sans Mono",monospace
+} */
 code {
-  background-color: #ffff;
-  border: 1px solid #ffff;
-  border-radius: 6px;
+  background-color: #BCBEC0;
+  border: 1px solid #BCBEC0;
+  /* border-radius: 6px; */
   display: inline-block;
   font-family: "Courier New", "Courier", monospace;
   -moz-font-feature-settings: "liga" off;
   font-feature-settings: "liga" off;
-  font-size: 16px;
+  font-size: 15px;
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: subpixel-antialiased;
   max-width: 100%;
   overflow-x: auto;
-  padding: 0 5px;
   vertical-align: middle;
   word-wrap: normal;
-  box-shadow: 0 1px 1px #000;
-}
-.talk {
-  margin-top: 80px;
 }
 .loader {
   position: relative;
