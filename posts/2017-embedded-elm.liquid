@@ -20,7 +20,33 @@ Dusting off the functional programming brain was much less painful using their
 examples and I'm a total sucker for getting tests to pass.
 <br><br>
 Next was asking for some guidance from <a href="https://twitter.com/CrockAgile">@CrockAgile</a>,
-a friend with experience. Pair programming is a wonderful thing.
+a friend with experience. He helped me a ton in sorting out the requirements
+of implementing standalone Elm. Things like the following code block that
+I'm likely to revisit for every Elm application I write.
+
+<pre>
+<code>
+type Msg
+    = NewInput String
+    | Said
+
+
+type alias Model =
+    ( String, String )
+
+
+main : Program Never Model Msg
+main =
+    Html.program
+        { init = ( ( "", "" ), Cmd.none )
+        , view = view
+        , update = update
+        , subscriptions = (\x -> Sub.none)
+        }
+
+</code>
+</pre>
+
 <br><br>
 So here it is, an implementation of the
 <a href="http://exercism.io/exercises/elm/bob/readme">Bob in Elm</a>
