@@ -1,10 +1,19 @@
 extends: default.liquid
 
-title: First Draft Post
+title: Embed elm
 draft: true
 date: 20 Nov 2017 18:53:00 +0100
+path: 2017/draft1
 ---
 
-<h1> This is our first draft Post! </h1>
+Attempts to embed elm.
 
-Welcome to the first draft post ever on cobalt.rs!
+<div id="elm"></div>
+
+<head>
+    <script src="/assets/post-1.js"></script>
+	<script>
+		var node = document.getElementById('elm');
+		var app = Elm.BlogPost.embed(node);
+	</script>
+</head>
