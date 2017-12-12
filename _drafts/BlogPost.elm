@@ -2,7 +2,6 @@ module BlogPost exposing (blogPost)
 
 import Html exposing (h1, div, text, input, button)
 import Html.Events exposing (onInput, onClick)
-import Html.Attributes exposing (style)
 import Regex
 
 
@@ -24,7 +23,7 @@ main =
         , subscriptions = (\x -> Sub.none)
         }
 
-
+view : Model -> Html.Html Msg
 view ( pre, pending ) =
     div []
         [ div []
