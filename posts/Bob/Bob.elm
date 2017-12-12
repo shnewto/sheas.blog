@@ -1,4 +1,4 @@
-module BlogPost exposing (blogPost)
+module Bob exposing (bob)
 
 import Html exposing (h1, div, text, input, button)
 import Html.Events exposing (onInput, onClick)
@@ -28,7 +28,7 @@ view ( pre, pending ) =
     div []
         [ div []
             [ input [ onInput NewInput ] []
-            , button [ onClick Asked ] [ text "Ask!" ]
+            , button [ onClick Asked ] [ text "Say it to Bob!" ]
             ]
         , text (hey pending)
         ]
@@ -44,8 +44,8 @@ update msg ( pre, pending ) =
             ( ( pre, pre ), Cmd.none )
 
 
-blogPost : String
-blogPost =
+bob : String
+bob =
     "Hello, World!"
 
 
