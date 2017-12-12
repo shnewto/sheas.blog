@@ -1,0 +1,33 @@
+extends: default.liquid
+
+title: Embedded Elm
+draft: false
+date: 12 Dec 2017 11:17:00 +0000
+path: 2017/embedded-elm
+---
+
+Implementation of the
+<a href="http://exercism.io/exercises/elm/bob/readme">Bob in Elm</a>
+exercise from <a href="http://exercism.io">exercism.io</a>.
+
+<p>
+Bob is a lackadaisical teenager. In conversation, his responses are very limited.
+<br>
+<li> Bob answers 'Sure.' if you ask him a question.
+<br>
+<li> He answers 'Whoa, chill out!' if you yell at him.
+<br>
+<li> He says 'Fine. Be that way!' if you address him without actually saying anything.
+<br>
+<li> He answers 'Whatever.' to anything else.
+</p>
+
+<div id="elm"></div>
+
+<head>
+    <script src="/assets/2017/embedded-elm.js"></script>
+	<script>
+		var node = document.getElementById('elm');
+		var app = Elm.Bob.embed(node);
+	</script>
+</head>
