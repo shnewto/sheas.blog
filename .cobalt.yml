@@ -3,4 +3,9 @@ source: "."
 dest: "./_site"
 posts: "posts"
 drafts: "_drafts"
+ignore:
+  - .elm
+  - elm-stuff/
+  - README.md
+  - LICENSE.txt
 post_order: "des"
