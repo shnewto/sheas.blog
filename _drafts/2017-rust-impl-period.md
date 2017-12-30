@@ -44,16 +44,16 @@ right.
     `bindgen` maintainer, I could pick the brain of others with experience in
     Rust and felt welcome as someone relatively new to the Rust space.
 
+    I picked a problem that sounded interesing to me and represented a chance
+    to learn. It was challenging! 
+
     When I was finally in a position that I felt warranted feedback and made a
     PR, I received incredibly thourough and thoughtful feedback. It empowered
     me to make my contribution much more robust.
 
-Other notes:
+    Really great documentation that allowed me to browse targeted items. I did 
+    feel intimidated at first at the ammount of docs but that probably 
+    increased the likelyhood of me finding something that that resonated.
 
-Really great documentation that allowed me to browse targeted items.
-
-I did feel intimidated at first at the ammount of docs but that probably
-increased the likelyhood of me finding something that that resonated.
-
-When I took on the project I had a clear idea of how to tackle it and that
-clear idea was misguided haha. 
+    When I took on the project I had a clear idea of how to tackle it and that
+    clear idea was misguided haha. 
