@@ -12,7 +12,23 @@ I've been interested in dipping my toes into the Elm language for some time
 and also, curious about whether it was possible / reasonable to integrate
 something I wrote in Elm into the Cobalt site tooling.
 <br><br>
-Integration was trivial so major points to Cobalt.
+Integration was trivial so major points to Cobalt. After generating the 
+JavaScript (<i>elm-make Bob.elm --output=embedded-elm.js</i>), I was
+able to use raw HTML in this post's <i>.liquid</i> file to embed that
+script like any other <i>.js</i> file... Or almost. This post's window into Elm
+is accomplished as follows:
+
+<pre>
+<code>&lt;head&gt;
+    &lt;script src="/assets/2017/embedded-elm.js"&gt;&lt;/script&gt;
+	&lt;script&gt;
+		var node = document.getElementById('elm');
+		var app = Elm.Bob.embed(node);
+	&lt;/script&gt;
+&lt;/head&gt;
+</code>
+</pre>
+
 <br><br>
 Learning enough Elm to make something happen was the difficulty. I love
 language learning tooling like <a href="http://exercism.io">exercism.io</a> so I started there.
@@ -25,8 +41,7 @@ of implementing standalone Elm. Things like the following code block that
 I'm likely to revisit for every Elm application I write.
 
 <pre>
-<code>
-type Msg
+<code>type Msg
     = NewInput String
     | Said
 
@@ -43,7 +58,6 @@ main =
         , update = update
         , subscriptions = (\x -> Sub.none)
         }
-
 </code>
 </pre>
 
