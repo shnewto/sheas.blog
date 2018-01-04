@@ -8,8 +8,37 @@ path: 2017/rust-impl-period
 
 ---
 
-For those of you unfamiliar with [the impl period](https://internals.rust-lang.org/t/the-final-impl-period-newsletter/6408), 
-it was, to paraphrase [Aaron Turon](https://internals.rust-lang.org/u/aturon), a time for the Rust community to 
+The [Rust programming language](https://www.rust-lang.org) "is a systems 
+programming language that runs blazingly fast, prevents segfaults, and 
+guarantees thread safety." The languages applications and its promise drew me
+to it personally as someone who's experience with and honest bias had always 
+been C. The implications of C I'd said, are power, speed and effiecency, 
+it's level of control. And becasue of it's severely dangerous nature, it also 
+came with some unspoken expectation that you've passed the Bukowski test, that 
+to develop C professionally, you were able to 
+[walk through the fire well](https://www.goodreads.com/book/show/632901.What_Matters_Most_is_How_Well_You_Walk_Through_the_Fire) 🙃.
+
+But Bukowski is ["a difficult crank"](https://www.goodreads.com/review/show/39569121?book_show_action=true&from_review_page=1). And after enough time, and especially in the face of my experiences with Rust 
+there was like, a record scratch.
+
+A portion of one of the top reviews that 
+Bukowski book _What Matters Most is How Well You Walk Through the Fire_ on 
+Goodreads pretty much sums the world after that record scratch, (sub C for 
+Bukowski) 
+
+and I've been fortunate enough for it to 
+have drawn me to it professionally over the last year or so. 
+
+I've been writing in on a somewhat
+regular cadence for the past few months. 
+
+This post
+represents my first 
+
+[The impl period](https://internals.rust-lang.org/t/the-final-impl-period-newsletter/6408) is a
+
+
+was, to paraphrase [Aaron Turon](https://internals.rust-lang.org/u/aturon), a time for the Rust community to 
 come together to focus on implemenation work rather than design/RFC work. And at the risk of spoiling the rest of the post, 
 it was a fantastic experience, it inspired me to contribute more and I hope it's an every year thing.
 
