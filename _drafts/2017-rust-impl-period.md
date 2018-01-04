@@ -12,37 +12,38 @@ The [Rust programming language](https://www.rust-lang.org) "is a systems
 programming language that runs blazingly fast, prevents segfaults, and 
 guarantees thread safety." The languages applications and its promise drew me
 to it personally as someone who's experience with and honest bias had always 
-been C. The implications of C I'd said, are power, speed and effiecency, 
-it's level of control. And becasue of it's severely dangerous nature, it also 
+been C. The implications of C I'd said, are power, speed, and effiecency.
+It's level of control. Becasue of it's (_severely_) dangerous nature, it also 
 came with some unspoken expectation that you've passed the Bukowski test, that 
 to develop C professionally, you were able to 
 [walk through the fire well](https://www.goodreads.com/book/show/632901.What_Matters_Most_is_How_Well_You_Walk_Through_the_Fire) 🙃.
 
-But Bukowski is ["a difficult crank"](https://www.goodreads.com/review/show/39569121?book_show_action=true&from_review_page=1). And after enough time, and especially in the face of my experiences with Rust 
-there was like, a record scratch.
-
-A portion of one of the top reviews that 
-Bukowski book _What Matters Most is How Well You Walk Through the Fire_ on 
-Goodreads pretty much sums the world after that record scratch, (sub C for 
-Bukowski) 
-
-and I've been fortunate enough for it to 
-have drawn me to it professionally over the last year or so. 
-
-I've been writing in on a somewhat
-regular cadence for the past few months. 
-
-This post
-represents my first 
-
-[The impl period](https://internals.rust-lang.org/t/the-final-impl-period-newsletter/6408) is a
+After enough time though, and after my experiences with Rust, there was like, a record scratch. 
+I sort of looked around with a kind of dread, this feeling that I'd just been romanticizing a 
+[_difficult crank who minimally, wasn't good for mental health_](https://www.goodreads.com/review/show/39569121?book_show_action=true&from_review_page=1)...
+(I've been fortunate enough that the record scratch was heard at my workplace too. 
+PolySync is [a friend of Rust](https://www.rust-lang.org/en-US/friends.html)
+. We've started using and favoring Rust, something I'm really excited about.)
 
 
-was, to paraphrase [Aaron Turon](https://internals.rust-lang.org/u/aturon), a time for the Rust community to 
-come together to focus on implemenation work rather than design/RFC work. And at the risk of spoiling the rest of the post, 
-it was a fantastic experience, it inspired me to contribute more and I hope it's an every year thing.
+## The impl period
 
-The work I did was for [bindgen](https://github.com/rust-lang-nursery/rust-bindgen).
+[The impl period](https://internals.rust-lang.org/t/the-final-impl-period-newsletter/6408) is a sort of seasonal
+community Rust project, or organization of projects. To paraphrase [Aaron Turon](https://internals.rust-lang.org/u/aturon), 
+it's a time for the Rust community to come together to focus on implemenation work rather than design/RFC work. 
+At the risk of spoiling the rest of the post, it was a fantastic experience, it inspired me to contribute more and 
+I hope it's an every year thing .
+
+My part in this community Rust project was work for [bindgen](https://github.com/rust-lang-nursery/rust-bindgen), 
+a tool that makes life better for C and C++ developers by automatically genertating bindings to existing libraries. 
+It's something I'd used in the past for exactly that, writng Rust code that interfaces with existing C and 
+I'm incredibly glad to it's in the ecosystem.
+
+Though I didn't directly effect any of _bindgen's_ functionality, the work I did will hopefully contribute to its
+growth. I took on the call to [add property based testing with quickcheck](https://github.com/rust-lang-nursery/rust-bindgen/issues/970). 
+For anyone unfamiliar, some of the power of property testing might be boiled down to it's effciency in testing an exahustive set inputs.
+One test has the potential to test many inputs, something that often requires many individual tests 
+
 
 My contributions were the following PRs:
 * [Property testing with quickcheck](https://github.com/rust-lang-nursery/rust-bindgen/pull/1159)
