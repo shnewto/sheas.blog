@@ -19,11 +19,14 @@ to develop C professionally, you were able to
 [walk through the fire well](https://www.goodreads.com/book/show/632901.What_Matters_Most_is_How_Well_You_Walk_Through_the_Fire) 🙃.
 
 After enough time though, and after my experiences with Rust, there was like, a record scratch. 
-I sort of looked around with a kind of dread, this feeling that I'd just been romanticizing a 
-[_difficult crank who minimally, wasn't good for mental health_](https://www.goodreads.com/review/show/39569121?book_show_action=true&from_review_page=1)...
-(I've been fortunate enough that the record scratch was heard at my workplace too. 
-PolySync is [a friend of Rust](https://www.rust-lang.org/en-US/friends.html)
-. We've started using and favoring Rust, something I'm really excited about.)
+I sort of looked around with a kind of dread, this feeling that a lot of us have just been romanticizing this
+[_difficult crank who minimally, isn't good for mental health_](https://www.goodreads.com/review/show/39569121?book_show_action=true&from_review_page=1).
+After that my "explorations with Rust" became more earnest; _actually writing_ Rust applications. 
+Participation in the 2017 impl period was an expression of that shift.
+
+(I've been fortunate enough that the record scratch was heard at my workplace too.
+PolySync is [a friend of Rust](https://www.rust-lang.org/en-US/friends.html), 
+we've moved from using to favoring it and that's something I'm really excited about.)
 
 
 ## The impl period
@@ -39,10 +42,11 @@ a tool that makes life better for C and C++ developers by automatically genertat
 It's something I'd used in the past for exactly that, writng Rust code that interfaces with existing C and 
 I'm incredibly glad to it's in the ecosystem.
 
-Though I didn't directly effect any of _bindgen's_ functionality, the work I did will hopefully contribute to its
+Though I didn't directly touch any of _bindgen's_ functionality, the work I did will hopefully contribute to its
 growth. I took on the call to [add property based testing with quickcheck](https://github.com/rust-lang-nursery/rust-bindgen/issues/970). 
-For anyone unfamiliar, some of the power of property testing might be boiled down to it's effciency in testing an exahustive set inputs.
-One test has the potential to test many inputs, something that often requires many individual tests 
+For anyone unfamiliar, some of the power of property testing might be boiled down to it's effciency in testing an exahustive set of inputs.
+One property test has the potential to excercise what in other paradigms, often requires an impractical or even impossible number of individual tests. 
+_[quickcheck](https://github.com/BurntSushi/quickcheck)_ is a Rust package that enables writing property tests (in the vein of [the original QuickCheck written in Haskell](https://en.wikipedia.org/wiki/QuickCheck)) for Rust projects. 
 
 
 My contributions were the following PRs:
