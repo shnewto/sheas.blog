@@ -14,12 +14,12 @@ guarantees thread safety." Its
 [impl period](https://internals.rust-lang.org/t/the-final-impl-period-newsletter/6408)
 is a sort of seasonal community Rust project, or organization of projects.
 To paraphrase [Aaron Turon](https://internals.rust-lang.org/t/announcing-the-impl-period-sep-18-dec-17/5676),
-it is a time for the Rust community to come together to focus on implemenation 
+it is a time for the Rust community to come together to focus on implementation 
 work rather than design/RFC work. 
 
 I've been lucky enough to have had the opportunity to learn Rust in order to write
-it at work at [PolySync](https://polysync.io/) over the last year or so. 
-[PolySync](https://polysync.io/)'s
+it over the last year or so at [PolySync](https://polysync.io/). 
+[PolySync](https://polysync.io/) is
 [a friend of Rust](https://www.rust-lang.org/en-US/friends.html) and we've been
 moving from _using_ Rust to _favoring_ it. My experience with the language at
 work drove me to explore the ecosystem independently and to eventually to write
