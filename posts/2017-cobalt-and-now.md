@@ -66,8 +66,9 @@ Node.js packages that I didn't really have an application for
 at the time. I thought I'd try it out. And damn, `now` is a super power.
 
 Here were the steps I took to get my blog up and running during development:
-1. Is `now` still installed? Yep.
+1. Install [now](https://zeit.co/download#now-cli).
 1. What does `now -h` give me? Ah `deploy` seems promising.
+1. Build the side with `cobalt build`
 1. `now deploy _site`? Bam! Live website with a generated URL.
 
 Totally, totally, sold, I ended up springing for the step above free account
