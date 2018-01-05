@@ -24,10 +24,10 @@ areas that I don't have much experience. That part of me won out.
 
 I've had some positive experiences with [Hugo](https://gohugo.io/) which made a
 lot of the work seem
-approachable but I wanted to explore alternative options, namely what Rust had
+approachable but wanted to explore alternative options, namely what Rust had
 to offer in the arena. A quick browser search for "static site generator rust"
 turns up a handful of options, but out of those, two seemed especially
-suited to what I was interested in.
+suited to the task.
 [Gutenberg](https://github.com/Keats/gutenberg) and
 [cobalt.rs](https://github.com/cobalt-org/cobalt.rs).
 
@@ -35,7 +35,7 @@ suited to what I was interested in.
 The docs for both seemed approachable so I felt optimistic that either choice
 would be manageable with effort. Because my experience is especially slim in
 design, my choice ultimately came down to finding an existing site built with
-either of the tools that had an aesthetic I liked and could pull from.
+either of the tools that had a relatable aesthetic to pull from.
 
 [Matthias Endler's blog](https://matthias-endler.de/) sold me, it's beautiful.
 Walking through [that code base](https://github.com/mre/mre.github.io) was a
@@ -43,15 +43,15 @@ fantastic tutorial on using cobalt.rs and _this_ site, especially
 my CSS, leans pretty heavily on what I learned there.
 
 ### Lessons
-Initially I didn't appreciate the `.md` and `.liquid` interchangeability. My
+Initially I didn't appreciate the `.md` and `.liquid` interchangeability. The
 first pass only used Markdown but then I wanted to incorporate styling... That's
 where the `.liquid` extension comes in! It lets you incorporate raw HTML,
 and all the power that comes with it, into any page (which in my mind is magical
-CSS and JavaScript ha). I love that I'm not constrained to Markdown but have it
+CSS and JavaScript ha). I love that not being constrained to Markdown but having it
 in the toolbox.
 
 ### It's built, now what?
-Okay, I dug in, hacked some CSS, learned what I could and couldn't do with
+Okay, I dug in, hacked some CSS, learned what was and wasn't possible with
 Markdown, fought the urge to duplicate the `.liquid` files in the `_layouts`
 directory without gaining anything from it and finally had something I thought
 I could run with.
@@ -59,11 +59,11 @@ But now what? I've been getting paid to write software
 for a few years now and I've never had to learn or cemented how to go from local
 files to a live website. 🙃. Where does all that happen? Do I need a _hosting_
 account?
-Which one? I've heard the words _Digital Ocean droplet_, that's probably
-something... Then I remembered a video I'd been recommended by a friend ages
+Which one? The words _Digital Ocean droplet_, probably mean
+something... Then a memory surfaced of video I'd been recommended by a friend ages
 ago on [now & next](https://www.youtube.com/watch?v=__b6k2pR3Tg&t=5s),
 Node.js packages that I didn't really have an application for
-at the time. I thought I'd try it out. And damn, `now` is a super power.
+at the time. I tried it out and damn, `now` is a super power.
 
 Here were the steps I took to get my blog up and running during development:
 1. Install [now](https://zeit.co/download#now-cli).
@@ -71,8 +71,8 @@ Here were the steps I took to get my blog up and running during development:
 1. Build the side with `cobalt build`
 1. `now deploy _site`? Bam! Live website with a generated URL.
 
-Totally, totally, sold, I ended up springing for the step above free account
-so I could associate my custom domains with the deploys and also support
+Totally, totally, sold, I ended up springing for the step above a free account to 
+associate custom domains with the deploys and also support
 something that blew my mind.
 
 ### Final thoughts
