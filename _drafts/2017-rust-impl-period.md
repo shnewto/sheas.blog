@@ -31,16 +31,16 @@ Backus–Naur form context-free grammars. I also recently participated in
 
 My part in Rust's _the impl period_ project was work for
 [bindgen](https://github.com/rust-lang-nursery/rust-bindgen), a tool that makes
-life better for C and C++ developers by automatically genertating bindings to
-existing libraries. It's something I'd used in the past for exactly that, 
-writing Rust code that interfaces with existing C. It did everything it promised 
-and I'm incredibly glad to it's in the ecosystem.
+life better for Rust developers that need to use C or C++ by automatically 
+genertating bindings to existing libraries. It's something I'd used in the 
+past for exactly that, writing Rust code that interfaces with existing C. 
+It did everything it promised and I'm incredibly glad it's in the ecosystem.
 
 Though I didn't directly touch any of _bindgen's_ functionality, the work I 
 did will hopefully help contribute to its growth. I took on the call to 
 [add property based testing with quickcheck](https://github.com/rust-lang-nursery/rust-bindgen/issues/970).
 For anyone unfamiliar, some of the power of property testing might be boiled 
-down to it's effciency in testing an exahustive set of inputs. One property test 
+down to it's efficiency in testing an exahustive set of inputs. One property test 
 has the potential to excercise what in other paradigms, often requires an 
 impractical or even impossible number of individual tests. 
 [quickcheck](https://github.com/BurntSushi/quickcheck) is a Rust package that 
@@ -111,7 +111,8 @@ thourough and thoughtful feedback I got from
 
 For more info on implementation details I'll probably do a follow up 
 post, but in the meantime, if you're interested in knowing more about it I'll 
-recommend checking out the conversations in the PRs linked to above. 
+recommend checking out the conversations in the PRs linked to above or 
+reaching out on Twitter, I'm [@shnewto](https://twitter.com/shnewto). 
 
 I'd like to offer a really enthusiastic thank you to the Rust community and 
 everyone involved in organizing and running the impl period for 2017. I'm glad 
