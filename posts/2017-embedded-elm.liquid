@@ -8,14 +8,46 @@ path: 2017/embedded-elm
 ---
 
 <p>
+<i>
+Bob is a lackadaisical teenager. In conversation, his responses are very limited.
+<br>
+<li> Bob answers 'Sure.' if you ask him a question.
+<br>
+<li> He answers 'Whoa, chill out!' if you yell at him.
+<br>
+<li> He says 'Fine. Be that way!' if you address him without actually saying anything.
+<br>
+<li> He answers 'Whatever.' to anything else.
+</i>
+</p>
+
+<div id="elm"></div>
+
+<head>
+    <script src="/assets/2017/embedded-elm.js"></script>
+	<script>
+		var node = document.getElementById('elm');
+		var app = Elm.Bob.embed(node);
+	</script>
+</head>
+
+<hr>
+
+<p>
 I've been interested in dipping my toes into the Elm language for some time
-and also, curious about whether it was possible / reasonable to integrate
+and curious about whether it was possible / reasonable to integrate
 something written in Elm into the Cobalt tooling used to generate this blog.
 <br><br>
-Integration was trivial so major points to Cobalt. After generating the 
-JavaScript (<i>elm-make Bob.elm --output=embedded-elm.js</i>), it was 
-embedded script like any other <i>.js</i> file in the raw HTML of this 
-post's <i>.liquid</i> file... Or almost. The HTML + Elm was accomplished 
+_Bob_ is the evidence that it's possible. He's an implementation of the
+<a href="http://exercism.io/exercises/elm/bob/readme">Bob in Elm</a>
+exercise from <a href="http://exercism.io">exercism.io</a> (source available
+<a href="https://github.com/snewt/blog.sheanewton.com/blob/master/posts/Bob/Bob.elm">
+here, don't look if you don't want it spoiled!</a>).
+
+Major points to Cobalt because integration was pretty trivial. After generating 
+the JavaScript (<i>elm-make Bob.elm --output=some-filename.js</i>), it can be
+embedded in the raw HTML of this post's <i>.liquid</i> file like any other 
+<i>.js</i> file. Or almost. The HTML + Elm was accomplished 
 as follows:
 
 <pre>
@@ -68,34 +100,3 @@ main =
 </code>
 </pre>
 
-<br><br>
-So here it is, an implementation of the
-<a href="http://exercism.io/exercises/elm/bob/readme">Bob in Elm</a>
-exercise from <a href="http://exercism.io">exercism.io</a> (source available
-<a href="https://github.com/snewt/blog.sheanewton.com/blob/master/posts/Bob/Bob.elm">
-here</a>).
-</p>
-
-<p>
-<i>
-Bob is a lackadaisical teenager. In conversation, his responses are very limited.
-<br>
-<li> Bob answers 'Sure.' if you ask him a question.
-<br>
-<li> He answers 'Whoa, chill out!' if you yell at him.
-<br>
-<li> He says 'Fine. Be that way!' if you address him without actually saying anything.
-<br>
-<li> He answers 'Whatever.' to anything else.
-</i>
-</p>
-
-<div id="elm"></div>
-
-<head>
-    <script src="/assets/2017/embedded-elm.js"></script>
-	<script>
-		var node = document.getElementById('elm');
-		var app = Elm.Bob.embed(node);
-	</script>
-</head>
