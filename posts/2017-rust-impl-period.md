@@ -1,9 +1,9 @@
 extends: default.liquid
 
 title: The Rust impl period and me
-draft: true
-date: 21 Dec 2017 11:13:00 +0000
-calendardate: December 21, 2017
+draft: false
+date: 8 Jan 2017 08:00:00 +0000
+calendardate: January 8, 2018
 path: 2017/rust-impl-period
 
 ---
