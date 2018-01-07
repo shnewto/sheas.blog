@@ -8,54 +8,6 @@ path: 2017/embedded-elm
 ---
 
 <p>
-I've been interested in dipping my toes into the Elm language for some time
-and also, curious about whether it was possible / reasonable to integrate
-something I wrote in Elm into the Cobalt site tooling.
-<br><br>
-Integration was trivial so major points to Cobalt.
-<br><br>
-Learning enough Elm to make something happen was the difficulty. I love
-language learning tooling like <a href="http://exercism.io">exercism.io</a> so I started there.
-Dusting off the functional programming brain was much less painful using their
-examples and I'm a total sucker for getting tests to pass.
-<br><br>
-Next was asking for some guidance from <a href="https://twitter.com/CrockAgile">@CrockAgile</a>,
-a friend with experience. He helped me a ton in sorting out the requirements
-of implementing standalone Elm. Things like the following code block that
-I'm likely to revisit for every Elm application I write.
-
-<pre>
-<code>
-type Msg
-    = NewInput String
-    | Said
-
-
-type alias Model =
-    ( String, String )
-
-
-main : Program Never Model Msg
-main =
-    Html.program
-        { init = ( ( "", "" ), Cmd.none )
-        , view = view
-        , update = update
-        , subscriptions = (\x -> Sub.none)
-        }
-
-</code>
-</pre>
-
-<br><br>
-So here it is, an implementation of the
-<a href="http://exercism.io/exercises/elm/bob/readme">Bob in Elm</a>
-exercise from <a href="http://exercism.io">exercism.io</a> (source available
-<a href="https://github.com/snewt/blog.sheanewton.com/blob/master/posts/Bob/Bob.elm">
-here</a>).
-</p>
-
-<p>
 <i>
 Bob is a lackadaisical teenager. In conversation, his responses are very limited.
 <br>
@@ -78,3 +30,79 @@ Bob is a lackadaisical teenager. In conversation, his responses are very limited
 		var app = Elm.Bob.embed(node);
 	</script>
 </head>
+
+<hr>
+
+<p>
+I've been interested in dipping my toes into the Elm language for some time
+and curious about whether it was possible / reasonable to integrate
+something written in Elm into the Cobalt tooling used to generate this blog.
+<br><br>
+_Bob_ is the evidence that it's possible. He's an implementation of the
+<a href="http://exercism.io/exercises/elm/bob/readme">Bob in Elm</a>
+exercise from <a href="http://exercism.io">exercism.io</a> (source available
+<a href="https://github.com/snewt/blog.sheanewton.com/blob/master/posts/Bob/Bob.elm">
+here, don't look if you don't want it spoiled!</a>).
+
+Major points to Cobalt because integration was pretty trivial. After generating 
+the JavaScript (<i>elm-make Bob.elm --output=some-filename.js</i>), it can be
+embedded in the raw HTML of a post's <i>.liquid</i> file like any other 
+<i>.js</i> file. Or almost. The HTML + Elm was accomplished 
+as follows:
+
+<pre>
+<code>&gt;div id="elm"&lt;&gt;/div&lt;
+&lt;head&gt;
+    &lt;script src="/assets/2017/embedded-elm.js"&gt;&lt;/script&gt;
+	&lt;script&gt;
+		var node = document.getElementById('elm');
+		var app = Elm.Bob.embed(node);
+	&lt;/script&gt;
+&lt;/head&gt;
+</code>
+</pre>
+
+<br><br>
+Learning enough Elm to make something happen was the difficulty. I love
+language learning tooling like <a href="http://exercism.io">exercism.io</a> so 
+started there. Dusting off the functional programming brain was much less 
+painful using their examples and I'm a total sucker for getting tests to pass.
+<br><br>
+Next was asking for help, something I'm trying to get better at. While the 
+compiler and documentation are really helpful, it's sometimes worth admitting 
+that learning from someone who's been through it already is invaluable. The
+<a href="https://www.freecodecamp.org/">freeCodeCamp</a> mantra
+<a href="https://medium.freecodecamp.org/read-search-dont-be-afraid-to-ask-743a23c411b4">Read, Search, (Don’t Be Afraid to) Ask</a>
+has influeced me in that.
+<a href="https://twitter.com/CrockAgile">@CrockAgile</a>,
+a friend who had been through some of the learning process provided some really 
+great guidance in sorting out the implementation details I's been unable to 
+glean from the first couple <a href="http://exercism.io">exercism.io</a>
+exercises. Things like the following code block that I'm likely to revisit for 
+any future Elm application I write.
+
+<pre>
+<code>type Msg
+    = NewInput String
+    | Said
+
+
+type alias Model =
+    ( String, String )
+
+
+main : Program Never Model Msg
+main =
+    Html.program
+        { init = ( ( "", "" ), Cmd.none )
+        , view = view
+        , update = update
+        , subscriptions = (\x -> Sub.none)
+        }
+</code>
+</pre>
+
+So check out the source and experiment with _Bob_ if you're interested in Elm 
+too. If you're someone with experience and have ideas about
+implementation, or you're a beginner like me with questions, feel to reach out.
+I'm <a href="https://twitter.com/shnewto">@shnewto</a> on Twitter.
