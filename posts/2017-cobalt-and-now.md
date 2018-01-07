@@ -14,9 +14,9 @@ with _[now](https://zeit.co/now)_.
 
 ### Time for a project
 The work of starting a blog intimidated me for a long time and I'd like to talk 
-a bit about how I made it past being intimidated. Some of what intimidated
-me in the past was the idea of finding time. Whether I'm actually able to find
-time isn't clear yet but I reached a point where I thought I'd try. The
+a bit about how I made it past being intimidated. Some of what slowed me down
+in the past was the idea of finding time. Whether I'm actually able to find
+time isn't clear yet but I've reached a point where I thought I'd try. The
 remaining problem stemmed from indecision. I wanted the solution to be 
 _just right_ but couldn't decide what that even meant. A part of me leaned 
 toward a nice prefab solution like [svbtle](https://svbtle.com/) or falling back 
@@ -27,7 +27,7 @@ don't have much experience.
 Some experiecnce with [Hugo](https://gohugo.io/) in the past had been positive, 
 it made a lot of the work seem approachable. When it comes to open source 
 solutions for hobby or "side" projects though, I've started to lean toward 
-projects that are a little younger or have at least have a little less 
+projects that are a little younger or have at least have a little less of the
 spotlight. I'm more often able to find some unpolished corner that gives me an 
 excuse to contribute to it and hopefully, make something cool even better. 
 
@@ -43,7 +43,7 @@ suited to the task.
 The docs for both seemed approachable so I felt optimistic that either choice
 would be manageable with effort. Because my experience is especially slim in
 design, my choice ultimately came down to finding an existing site built with
-either of the tools that had a relatable aesthetic to pull from.
+either of the tools that had an aesthetic I wanted to pull from.
 
 [Matthias Endler's blog](https://matthias-endler.de/) sold me, it's beautiful.
 Walking through [that code base](https://github.com/mre/mre.github.io) was a
@@ -54,7 +54,7 @@ my CSS, leans pretty heavily on what I found there.
 Initially, I didn't appreciate the `.md` and `.liquid` interchangeability. The
 first pass only used Markdown but hit a wall when wanted to incorporate 
 styling in some draft posts. _That's_ where the `.liquid` extension comes in.
-It lets you incorporate raw HTML, and all the power that comes with it, 
+It lets you incorporate raw HTML, and all the power that comes with it 
 into any page (which in my mind is basically magical CSS and JavaScript ha). 
 I love not being constrained to Markdown but having it in the toolbox.
 
@@ -63,7 +63,7 @@ Okay, I dug in, hacked some CSS, learned what was and wasn't possible with
 Markdown, fought the urge to duplicate the `.liquid` files in the `_layouts`
 directory without gaining anything from it and finally had something I thought
 I could run with.
-But now what? I've been getting paid to write software
+But then what? I've been getting paid to write software
 for a few years now and I've never had to learn or cemented how to go from local
 files to a live website 🙃. Where does all that happen? Do I need a _hosting_
 account? Which one? The words _Digital Ocean droplet_ probably mean
