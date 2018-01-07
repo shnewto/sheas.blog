@@ -4,7 +4,7 @@ route: about
 static: true
 ---
 
-Customer Services Engineer at [PolySync](https://polysync.io/)
+Client Services Engineer at [PolySync](https://polysync.io/)
 in Portland, Oregon. Writes code generation tools, sensor drivers, property 
 tests.
 
