@@ -17,16 +17,16 @@ To paraphrase [Aaron Turon](https://internals.rust-lang.org/t/announcing-the-imp
 it is a time for the Rust community to come together to focus on implementation 
 work rather than design/RFC work. 
 
-I've been lucky enough to have had the opportunity to learn Rust in order to write
-it over the last year or so at [PolySync](https://polysync.io/). 
+I've been lucky enough to have had the opportunity to learn Rust in order to 
+write it over the last year or so at [PolySync](https://polysync.io/). 
 [PolySync](https://polysync.io/) is
 [a friend of Rust](https://www.rust-lang.org/en-US/friends.html) and we've been
 moving from _using_ Rust to _favoring_ it. My experience with the language at
 work drove me to explore the ecosystem independently and to eventually to write
-Rust for myself, outside of work. I'm reasonably
-proud of a recently published crate [bnf](https://crates.io/crates/bnf), a library for parsing 
-Backus–Naur form context-free grammars. Participating in the
- _the impl period_ is something I'm reasonably proud of as well.
+Rust for myself, outside of work. I'm proud of a recently published 
+crate [bnf](https://crates.io/crates/bnf), a library for parsing 
+Backus–Naur form context-free grammars. Participating in
+_the impl period_ is something I'm proud of as well.
 
 ## A quickchecking crate
 
@@ -39,12 +39,12 @@ It did everything it promised and I'm incredibly glad it's in the ecosystem.
 
 Though not directly affecting any of _bindgen's_ functionality, the 
 [quickchecking crate](https://github.com/rust-lang-nursery/rust-bindgen/tree/master/tests/quickchecking)
-written to tackle the
+was written to tackle the
 _[Add property based testing with quickcheck](https://github.com/rust-lang-nursery/rust-bindgen/issues/970)_ 
 issue will hopefully help contribute to its growth.
 Some of the power of property testing might be boiled 
 down to its efficiency in testing an exhaustive set of inputs. One property test 
-has the potential to excercise what in other paradigms, often requires an 
+has the potential to exercise what in other paradigms, often requires an 
 impractical or even impossible number of individual tests. 
 [quickcheck](https://github.com/BurntSushi/quickcheck) is a Rust package that 
 enables writing property tests 
@@ -107,18 +107,21 @@ It's also worth noting the things that I expect apply more generally.
 
 * When I took on the project it was with a clear idea of how to tackle it and that clear idea was __completely__ misguided. Mapping out a new solution and implementing it really scratched the itch.
 
-
 Participating was a fantastic experience, I hope the impl period is an every year 
 thing. It provided a feeling of genuinely leveling up as a Rust developer, 
-in some part because it was a new problem to solve but largely because of the incredibly 
-thorough and thoughtful feedback from 
+in some part because it was a new problem to solve but largely because of the 
+incredibly thorough and thoughtful feedback from 
 [@fitzgen](https://github.com/fitzgen) who reviewed my PRs.
 
 For more info on implementation details I'll probably do a follow up 
-post, but in the meantime, if you're interested in knowing more about it check out 
-the conversations in the PRs linked to above or 
-reaching out on Twitter, [@shnewto](https://twitter.com/shnewto). 
+post, but in the meantime, if you're interested in knowing more about it check 
+out the conversations in the PRs linked to above or 
+reach out on Twitter, I'm [@shnewto](https://twitter.com/shnewto). 
 
 I'd like to offer a really enthusiastic thank you to the Rust community and 
 everyone involved in organizing and running the impl period for 2017. I'm glad 
-for the experience and look forward to engaging more.
+for the experience and look forward to engaging more. 
+
+Also, a huge thanks to [@craftloopz](https://twitter.com/craftloopz) for
+working with me through the drafts of this post. She's an amazing editor and 
+helped me shape a meandering brain dump into a proper post.  

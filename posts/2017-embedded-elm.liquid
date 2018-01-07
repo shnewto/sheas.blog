@@ -46,12 +46,13 @@ here, don't look if you don't want it spoiled!</a>).
 
 Major points to Cobalt because integration was pretty trivial. After generating 
 the JavaScript (<i>elm-make Bob.elm --output=some-filename.js</i>), it can be
-embedded in the raw HTML of this post's <i>.liquid</i> file like any other 
+embedded in the raw HTML of a post's <i>.liquid</i> file like any other 
 <i>.js</i> file. Or almost. The HTML + Elm was accomplished 
 as follows:
 
 <pre>
-<code>&lt;head&gt;
+<code>&gt;div id="elm"&lt;&gt;/div&lt;
+&lt;head&gt;
     &lt;script src="/assets/2017/embedded-elm.js"&gt;&lt;/script&gt;
 	&lt;script&gt;
 		var node = document.getElementById('elm');
@@ -63,19 +64,20 @@ as follows:
 
 <br><br>
 Learning enough Elm to make something happen was the difficulty. I love
-language learning tooling like <a href="http://exercism.io">exercism.io</a> so started there.
-Dusting off the functional programming brain was much less painful using their
-examples and I'm a total sucker for getting tests to pass.
+language learning tooling like <a href="http://exercism.io">exercism.io</a> so 
+started there. Dusting off the functional programming brain was much less 
+painful using their examples and I'm a total sucker for getting tests to pass.
 <br><br>
 Next was asking for help, something I'm trying to get better at. While the 
-compiler and documentation is really helpful, it's sometimes worth admittinh that
-learning from someone who's been through it already is invaluable. The
+compiler and documentation are really helpful, it's sometimes worth admitting 
+that learning from someone who's been through it already is invaluable. The
 <a href="https://www.freecodecamp.org/">freeCodeCamp</a> mantra
 <a href="https://medium.freecodecamp.org/read-search-dont-be-afraid-to-ask-743a23c411b4">Read, Search, (Don’t Be Afraid to) Ask</a>
 has influeced me in that.
 <a href="https://twitter.com/CrockAgile">@CrockAgile</a>,
-a friend who had been through some of the learning process provided some really great guidance in sorting 
-out the implementation details I's been unable to glean from the first couple <a href="http://exercism.io">exercism.io</a>
+a friend who had been through some of the learning process provided some really 
+great guidance in sorting out the implementation details I's been unable to 
+glean from the first couple <a href="http://exercism.io">exercism.io</a>
 exercises. Things like the following code block that I'm likely to revisit for 
 any future Elm application I write.
 
@@ -100,3 +102,7 @@ main =
 </code>
 </pre>
 
+So check out the source and experiment with _Bob_ if you're interested in Elm 
+too. If you're someone with experience and have ideas about
+implementation, or you're a beginner like me with questions, feel to reach out.
+I'm <a href="https://twitter.com/shnewto">@shnewto</a> on Twitter.
