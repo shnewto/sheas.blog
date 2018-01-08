@@ -52,7 +52,7 @@ my CSS, leans pretty heavily on what I found there.
 
 ### Lessons
 Initially, I didn't appreciate the `.md` and `.liquid` interchangeability. The
-first pass only used Markdown but hit a wall when wanted to incorporate 
+first pass only used Markdown so I hit a wall when wanted to incorporate 
 styling in some draft posts. _That's_ where the `.liquid` extension comes in.
 It lets you incorporate raw HTML, and all the power that comes with it 
 into any page (which in my mind is basically magical CSS and JavaScript ha). 
@@ -76,7 +76,7 @@ superpower.
 
 Here are the steps I took to get my blog up and running during development:
 1. Install [now](https://zeit.co/download#now-cli).
-1. Build the side with `cobalt build`
+1. Build the site with `cobalt build` (it generates a `_site` directory).
 1. `now deploy _site`? Bam! Live website with a generated URL.
 
 Totally, totally, sold. I ended up springing for the step above a free account 
