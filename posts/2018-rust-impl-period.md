@@ -22,11 +22,11 @@ write it over the last year or so at [PolySync](https://polysync.io/).
 [PolySync](https://polysync.io/) is
 [a friend of Rust](https://www.rust-lang.org/en-US/friends.html) and we've been
 moving from _using_ Rust to _favoring_ it. My experience with the language at
-work drove me to explore the ecosystem independently and to eventually to write
-Rust for myself, outside of work. I'm proud of a recently published 
-crate [bnf](https://crates.io/crates/bnf), a library for parsing 
-Backus–Naur form context-free grammars. Participating in
-_the impl period_ is something I'm proud of as well.
+work drove me to explore the ecosystem independently and to eventually write
+Rust for myself, outside of work. I'm happy about a recently published 
+crate [bnf](https://crates.io/crates/bnf) (a library for parsing 
+Backus–Naur form context-free grammars) and really satisfied with my experience
+participating in _the impl period_.
 
 ## A quickchecking crate
 
@@ -41,7 +41,7 @@ Though not directly affecting any of _bindgen's_ functionality, the
 [quickchecking crate](https://github.com/rust-lang-nursery/rust-bindgen/tree/master/tests/quickchecking)
 was written to tackle the
 _[Add property based testing with quickcheck](https://github.com/rust-lang-nursery/rust-bindgen/issues/970)_ 
-issue will hopefully help contribute to its growth.
+issue and will hopefully help contribute to its growth.
 Some of the power of property testing might be boiled 
 down to its efficiency in testing an exhaustive set of inputs. One property test 
 has the potential to exercise what in other paradigms, often requires an 
@@ -60,7 +60,7 @@ GitHub repository:
 * [Enable Cargo features for quickchecking crate](https://github.com/rust-lang-nursery/rust-bindgen/pull/1180)
 
 I count my experience as a success. Mostly because three PRs were
-merged and the corresponding issues closed and a little bit because the 
+merged and the corresponding issues closed and little bit because the 
 crate was noticed by [@steveklabnik](https://twitter.com/steveklabnik) 
 (who does a pretty damn good job summing up its function, "bindgen uses 
 quickcheck to generate random c header files and then tries to parse them".). 
@@ -74,7 +74,7 @@ for a peek into what a couple randomly generated C headers look like.
 While unable to meet the goal of uncovering 
 ["many hidden issues via fuzzing"](https://paper.dropbox.com/doc/bindgen-xTXplHlfqJpnDvPhMqmfW), the 
 [quickchecking crate](https://github.com/rust-lang-nursery/rust-bindgen/tree/master/tests/quickchecking) 
-has caught [one new bug](https://github.com/rust-lang-nursery/rust-bindgen/issues/1153)
+caught [one new bug](https://github.com/rust-lang-nursery/rust-bindgen/issues/1153)
 and is able to regularly catch a couple others, 
 [#550](https://github.com/rust-lang-nursery/rust-bindgen/issues/550)
 and [#684](https://github.com/rust-lang-nursery/rust-bindgen/issues/684). To me
@@ -124,4 +124,4 @@ for the experience and look forward to engaging more.
 
 Also, a huge thanks to [@craftloopz](https://twitter.com/craftloopz) for
 working with me through the drafts of this post. She's an amazing editor and 
-helped me shape a meandering brain dump into a proper post.  
+helped me shape something I'm glad to share.  
