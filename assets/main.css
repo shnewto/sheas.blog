@@ -123,21 +123,11 @@ blockquote {
   margin: 4px 10px;
   padding: 3px 20px;
 }
-code {
-  background-color: #BCBEC0;
-  border: 1px solid #BCBEC0;
-  /* border-radius: 6px; */
-  display: inline-block;
-  font-family: "Courier New", "Courier", monospace;
-  -moz-font-feature-settings: "liga" off;
-  font-feature-settings: "liga" off;
-  font-size: 15px;
+code, pre {
+  font-family: "Source Code Pro", Menlo, Monaco, Consolas, "DejaVu Sans Mono", Inconsolata, monospace;
+  white-space: pre-wrap;
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: subpixel-antialiased;
-  max-width: 100%;
-  overflow-x: auto;
-  vertical-align: middle;
-  word-wrap: normal;
 }
 .loader {
   position: relative;
@@ -193,8 +183,30 @@ object::after {
   }
   pre {
     font-size: 0.85em;
-    padding: 5px;
+    border: solid 1px hsla(204, 10%, 80%, 1);
+    border-radius: .25em;
+    margin: 0 -.03125em;
+    padding: .0625em .25em 0;
+    white-space: pre-wrap;
   }
+  pre.rust .kw { color: #8959A8; }
+  pre.rust .kw-2, pre.rust .prelude-ty { color: #4271AE; }
+  pre.rust .number, pre.rust .string { color: #718C00; }
+  pre.rust .self, pre.rust .bool-val, pre.rust .prelude-val,
+  pre.rust .attribute, pre.rust .attribute .ident { color: #C82829; }
+  pre.rust .attribute, pre.rust .attribute .ident { color: #C82829; }
+  pre.rust .macro, pre.rust .macro-nonterminal { color: #3E999F; }
+  pre.rust .lifetime { color: #B76514; }
+  pre.rust .question-mark {
+      color: #ff9011;
+      font-weight: bold;
+  }
+  pre.rust { position: relative; }
+  pre {
+      background-color: #F5F5F5;
+  }
+  pre.rust .comment { color: #8E908C; }
+  pre.rust .doccomment { color: #4D4D4C; }  
   h1 {
     font-size: 1.6em;
   }
