@@ -12,34 +12,37 @@
 
     <meta name="author" content="Shea Newton">
     <meta name="description" content="Shea's blog"/>
+    <link rel="stylesheet" href="/assets/higlight/styles/default.css">
+    <script src="/assets/higlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </head>
   <body>
-        <header>
-            <a class="logo" href="/">
-              <img alt="Home" src="/img/me.jpg"/>
-            </a>
-            <p>
-              Writes software, talks to hardware.<br>
-              <!--&lt;mood&gt; ::=  🙃 | 🙀 | 😬 | 🐋-->
-            </p>
-            <nav>
-              <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Me</a></li>
-              </ul>
-            </nav>
-        </header>
-        <main role="main">
-            {% if calendardate %}
-              <div class="published-date">
-                <i>Published on {{ calendardate }}</i>
-              </div>
-            {% endif %}
-            {%- if title != "" %}
-              <h1>{{ title }}</h1>
-            {%- endif %}
-            {{ content }}
-        </main>
-        {%- include _layouts/footer.liquid %}
+    <header>
+        <a class="logo" href="/">
+          <img alt="Home" src="/img/me.jpg"/>
+        </a>
+        <p>
+          Writes software, talks to hardware.<br>
+          <!--&lt;mood&gt; ::=  🙃 | 🙀 | 😬 | 🐋-->
+        </p>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Me</a></li>
+          </ul>
+        </nav>
+    </header>
+    <main role="main">
+        {% if calendardate %}
+          <div class="published-date">
+            <i>Published on {{ calendardate }}</i>
+          </div>
+        {% endif %}
+        {%- if title != "" %}
+          <h1>{{ title }}</h1>
+        {%- endif %}
+        {{ content }}
+    </main>
+    {%- include _layouts/footer.liquid %}
   </body>
 </html>

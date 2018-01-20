@@ -8,7 +8,6 @@ path: 2018/impl-fromstr
 
 ---
 
-
 I recently came across a head scratcher while working on a personal project
 in Rust. I wasn't able to find a ready solution that suited me so I worked it
 out on my own. Thought I'd share it because on one hand, it represents some
@@ -28,8 +27,15 @@ trait as follows.
 
 ## Part 1: TypeV1
 
-<pre class='rust'>
-<code>
+<pre>
+<code class="rust">fn main() {
+    println!("Hello, world!");
+}
+</pre>
+</code>
+
+<pre>
+<code class="rust">
 use std::str::FromStr;
 use std::string::ParseError;
 
@@ -51,8 +57,8 @@ From here an application that uses my `from_str_example` crate might assume
 the following will work (I did).
 
 
-<pre class='rust'>
-<code>
+<pre>
+<code class='rust'>
 extern crate from_str_example;
 use from_str_example::TypeV1;
 
