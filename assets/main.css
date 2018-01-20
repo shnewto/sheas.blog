@@ -189,7 +189,7 @@ object::after {
     padding: .0625em .25em 0;
     white-space: pre-wrap;
   }
-  pre.rust .kw { color: #8959A8; }
+  /*pre.rust .kw { color: #8959A8; }
   pre.rust .kw-2, pre.rust .prelude-ty { color: #4271AE; }
   pre.rust .number, pre.rust .string { color: #718C00; }
   pre.rust .self, pre.rust .bool-val, pre.rust .prelude-val,
@@ -206,7 +206,7 @@ object::after {
       background-color: #F5F5F5;
   }
   pre.rust .comment { color: #8E908C; }
-  pre.rust .doccomment { color: #4D4D4C; }  
+  pre.rust .doccomment { color: #4D4D4C; } */
   h1 {
     font-size: 1.6em;
   }
@@ -222,7 +222,7 @@ object::after {
   footer {
     margin-left: 260px;
     margin-bottom: 40px;
-  }  
+  }
 }
 @media (min-width: 1024px) {
   body {
