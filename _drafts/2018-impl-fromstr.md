@@ -28,15 +28,7 @@ trait as follows.
 ## Part 1: TypeV1
 
 <pre>
-<code class="rust">fn main() {
-    println!("Hello, world!");
-}
-</pre>
-</code>
-
-<pre>
-<code class="rust">
-use std::str::FromStr;
+<code class='rust'>use std::str::FromStr;
 use std::string::ParseError;
 
 pub struct TypeV1 {
@@ -58,8 +50,7 @@ the following will work (I did).
 
 
 <pre>
-<code class='rust'>
-extern crate from_str_example;
+<code class='rust'>extern crate from_str_example;
 use from_str_example::TypeV1;
 
 fn main() {
@@ -72,7 +63,7 @@ fn main() {
 But it doesn't work! Trying to compile results in the following errors:
 
 <pre>
-<code>Compiling myapp v0.1.0 (file:///path/to/my/app)
+<code class='bash'>Compiling myapp v0.1.0 (file:///path/to/my/app)
 error[E0599]: no function or associated item named `from_str` found for type `from_str::TypeV1` in the current scope
   --> src/main.rs:18:16
    |
@@ -93,9 +84,8 @@ error: Could not compile `myapp`.
 
 Okay. I trust the compiler. Lets add the `use` it recommends.
 
-<pre class='rust'>
-<code>
-extern crate from_str_example;
+<pre>
+<code class='rust'>extern crate from_str_example;
 use from_str_example::TypeV1;
 
 use std::str::FromStr;
@@ -116,8 +106,8 @@ time to rethink. I can just implement my _own_ `from_str` for my type.
 So after a revsion, that we'll note by using `TypeV2` in this section, we have
 the following code in our libary.
 
-<pre class='rust'>
-<code>
+<pre>
+<code class='rust'>
 use std::string::ParseError;
 
 pub struct TypeV2 {
@@ -134,8 +124,8 @@ impl TypeV2 {
 
 And voila, the following works just like I'd hoped...
 
-<pre class='rust'>
-<code>
+<pre>
+<code class='rust'>
 extern crate from_str_example;
 use from_str_example::TypeV2;
 
@@ -153,8 +143,8 @@ provide as example, some code with meaningful output. If you decide you'd like
 to experiment, feel free to remove the `println!`s and revise the
 signature to `pub fn generic_print_function<T: FromStr>()`
 
-<pre class='rust'>
-<code>
+<pre>
+<code class='rust'>
 use std::str::FromStr;
 use std::fmt::Debug;
 
@@ -170,8 +160,8 @@ pub fn generic_print_function<T: FromStr + Debug>(var: T)
 
 Now a user of the `from_str_example` crate is back to compile errors!
 
-<pre class='rust'>
-<code>
+<pre>
+<code class='rust'>
 extern crate from_str_example;
 use from_str_example::TypeV2;
 
@@ -186,7 +176,7 @@ fn main() {
 The above example results in the following compile error:
 
 <pre>
-<code>Compiling from_str v0.1.0 (file:///path/to/my/app)
+<code class='bash'>Compiling from_str v0.1.0 (file:///path/to/my/app)
 Compiling myapp v0.1.0 (file:///path/to/my/app)
 error[E0277]: the trait bound `from_str::TypeV2: std::str::FromStr` is not satisfied
   --> src/main.rs:27:5
