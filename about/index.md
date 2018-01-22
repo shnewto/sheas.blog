@@ -5,7 +5,7 @@ static: true
 ---
 
 Client Services Engineer at [PolySync](https://polysync.io/)
-in Portland, Oregon. Writes code generation tools, sensor drivers, property 
+in Portland, Oregon. Writes code generation tools, sensor drivers, property
 tests.
 
 Education:

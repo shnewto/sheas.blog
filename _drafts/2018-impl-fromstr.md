@@ -42,8 +42,8 @@ impl FromStr for TypeV1 {
         Ok(Self { my_string: String::from(s) })
     }
 }
-</pre>
 </code>
+</pre>
 
 From here an application that uses my `from_str_example` crate might assume
 the following will work (I did).
@@ -94,8 +94,8 @@ fn main() {
     let var = TypeV1::from_str(
         "Today my winged horse is coming").unwrap();
 }
-</pre>
 </code>
+</pre>
 
 And it works! But wait... I don't want to require that `use`. I want `from_str`
 to just work for `TypeV1` without requiring anything beyond my library. Okay,
@@ -119,8 +119,8 @@ impl TypeV2 {
         Ok(Self { my_string: String::from(s) })
     }
 }
-</pre>
 </code>
+</pre>
 
 And voila, the following works just like I'd hoped...
 
@@ -133,8 +133,8 @@ fn main() {
     let var: TypeV2 = TypeV2::from_str(
         "and I am carrying you off to the moon").unwrap();
 }
-</pre>
 </code>
+</pre>
 
 Or rather, worked as I'd hoped _briefly_. My next issue arose when I wanted
 to write a generic function that expected the `FromStr` trait. Lets reduce
@@ -155,8 +155,8 @@ pub fn generic_print_function<T: FromStr + Debug>(var: T)
     println!("{:?}", var);
     println!("{:?}", from_str_result);
 }
-</pre>
 </code>
+</pre>
 
 Now a user of the `from_str_example` crate is back to compile errors!
 
@@ -170,8 +170,8 @@ fn main() {
         "and I am carrying you off to the moon").unwrap();
     generic_print_function(var);
 }
-</pre>
 </code>
+</pre>
 
 The above example results in the following compile error:
 
@@ -191,12 +191,79 @@ error: aborting due to previous error
 error: Could not compile `myapp`.
 
 To learn more, run the command again with --verbose.
-</pre>
 </code>
+</pre>
 
 Well damn, we just removed the implementation of `FromStr`. Desparate times,
 they call for desparate measures.
 
 ## Part 3: TypeV3
 
-At this point I was feeling devious.
+I began the search engine and stack overflow answers dance. I'm not going to
+claim that the answer isn't out there but I wasn't able to unearth one and
+after enough time I started feeling devious.
+
+Could I just implement `FromStr` _and_ `from_str` unique to my custom type?
+
+As a seasoned C developer I'm accustomed to having to brace for impact when
+it feels like I'm going out on a limb. But in Rust land, I've been
+empowered by the "hack without fear" mantra. I'm less twitchy and more open to
+looking for a fight because I've got the compiler at my back.
+
+Here's my approach using using `TypeV3` to indicate the shift.
+
+<pre>
+<code class='rust'>
+pub struct TypeV3 {
+    my_string: String,
+}
+
+impl TypeV3 {
+    pub fn from_str(s: &str) -> Result<Self, ParseError> {
+        Ok(Self { my_string: String::from(s) })
+    }
+}
+
+impl FromStr for TypeV3 {
+    type Err = ParseError;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        Self::from_str(s)
+    }
+}
+
+pub fn generic_print_function<T: FromStr + Debug>(var: T)
+    where <T as std::str::FromStr>::Err: std::fmt::Debug
+{
+    let from_str_result = T::from_str("Wear your boots if you wander today");
+    println!("{:?}", var);
+    println!("{:?}", from_str_result);
+}
+</code>
+</pre>
+
+🙃
+
+It compiled! Lets see if it works...
+
+<pre>
+<code class='rust'>
+extern crate from_str_example;
+use from_str_example::TypeV3;
+
+fn main() {
+    let var = TypeV3::from_str(
+        "and on the moon we will eat rose petals.").unwrap();
+    generic_print_function(var);
+}
+</code>
+</pre>
+
+It does work! Recapping for anyone scanning for the words __fix__ or
+__success__, implement the trait `FromStr` _as well as_ a function called
+`from_str` for your custom type. This allows you to sidestep the requirement
+that a user of your library has to add `use std::str::FromStr;` to their project
+to use yours.
+
+For any questions or if you have any insight to offer into this issue, please
+do reach out on Twitter, I'm [@shnewto](https://twitter.com/shnewto).
