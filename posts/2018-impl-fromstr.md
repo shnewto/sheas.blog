@@ -2,7 +2,7 @@ extends: default.liquid
 
 title: Implementing FromStr
 draft: false
-date: 22 Jan 2018 09:40:00 +0000
+date: 22 Jan 2018 10:15:00 +0000
 calendardate: January 22, 2018
 path: 2018/impl-fromstr
 
@@ -267,4 +267,4 @@ to use yours.
 
 
 For any questions or if you have any insight around the subject of this post,
-please do reach out on Twitter, I'm [@shnewto](https://twitter.com/shnewto).
+reach out on Twitter, I'm [@shnewto](https://twitter.com/shnewto).
