@@ -2,18 +2,18 @@ extends: default.liquid
 
 title: Implementing FromStr
 draft: true
-date: 19 Jan 2018 08:30:00 +0000
-calendardate: January 19, 2018
+date: 22 Jan 2018 09:30:00 +0000
+calendardate: January 22, 2018
 path: 2018/impl-fromstr
 
 ---
 
 I recently came across a head-scratcher while working on a personal project
 in Rust. I wasn't able to find a ready solution so I worked
-something out on my own. I decided to talk through my solution here because on
-one hand, the problem I encountered represents behavior I hadn't seen before
-and would be interested in conversation around it. On the other, it might help
-someone that finds themselves in the same boat.
+something out on my own. I decided to talk through my solution here for a few
+reasons. The problem I encountered represents behavior I hadn't seen before, 
+it's something I learned from and am interested in some conversation around it. 
+I also think it might help someone who finds themselves in the same boat.
 
 The general problem arose while exploring the `FromStr` trait. I wanted to
 implement it for my own type but ran into a pesky issue. Implementing the
@@ -39,7 +39,7 @@ pub struct TypeV1 {
 impl FromStr for TypeV1 {
     type Err = ParseError;
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
+    fn from_str(s: &str) -> Result&lt;Self, Self::Err&gt; {
         Ok(Self { my_string: String::from(s) })
     }
 }
@@ -108,15 +108,14 @@ So after a revision, that we'll note by using `TypeV2` in this section, we have
 the following code in our library.
 
 <pre>
-<code class='rust'>
-use std::string::ParseError;
+<code class='rust'>use std::string::ParseError;
 
 pub struct TypeV2 {
     my_string: String,
 }
 
 impl TypeV2 {
-    pub fn from_str(s: &str) -> Result<Self, ParseError> {
+    pub fn from_str(s: &str) -> Result&lt;Self, ParseError&gt; {
         Ok(Self { my_string: String::from(s) })
     }
 }
@@ -126,8 +125,7 @@ impl TypeV2 {
 And voila, the following works just like I'd hoped...
 
 <pre>
-<code class='rust'>
-extern crate from_str_example;
+<code class='rust'>extern crate from_str_example;
 use from_str_example::TypeV2;
 
 fn main() {
@@ -145,12 +143,11 @@ to experiment, feel free to remove the `println!`s and revise the
 signature to `pub fn generic_print_function<T: FromStr>(_:T)`
 
 <pre>
-<code class='rust'>
-use std::str::FromStr;
+<code class='rust'>use std::str::FromStr;
 use std::fmt::Debug;
 
-pub fn generic_print_function<T: FromStr + Debug>(var: T)
-    where <T as std::str::FromStr>::Err: std::fmt::Debug
+pub fn generic_print_function&lt;T: FromStr + Debug&gt;(var: T)
+    where &lt;T as std::str::FromStr&gt;::Err: std::fmt::Debug
 {
     let from_str_result = T::from_str("Wear your boots if you wander today");
     println!("{:?}", var);
@@ -162,8 +159,7 @@ pub fn generic_print_function<T: FromStr + Debug>(var: T)
 Now a user of the `from_str_example` crate is back to compile errors!
 
 <pre>
-<code class='rust'>
-extern crate from_str_example;
+<code class='rust'>extern crate from_str_example;
 use from_str_example::TypeV2;
 
 fn main() {
@@ -214,13 +210,17 @@ looking for a fight because I've got the compiler at my back.
 Here's my approach using `TypeV3` to indicate the shift.
 
 <pre>
-<code class='rust'>
+<code class='rust'>use std::str::FromStr;
+use std::string::ParseError;
+use std::fmt::Debug;
+
+#[derive(Debug)]
 pub struct TypeV3 {
     my_string: String,
 }
 
 impl TypeV3 {
-    pub fn from_str(s: &str) -> Result<Self, ParseError> {
+    pub fn from_str(s: &str) -> Result&lt;Self, ParseError&gt; {
         Ok(Self { my_string: String::from(s) })
     }
 }
@@ -233,8 +233,8 @@ impl FromStr for TypeV3 {
     }
 }
 
-pub fn generic_print_function<T: FromStr + Debug>(var: T)
-    where <T as std::str::FromStr>::Err: std::fmt::Debug
+pub fn generic_print_function&lt;T: FromStr + Debug&gt;(var: T)
+    where &lt;T as std::str::FromStr&gt;::Err: std::fmt::Debug
 {
     let from_str_result = T::from_str("Wear your boots if you wander today");
     println!("{:?}", var);
@@ -243,13 +243,10 @@ pub fn generic_print_function<T: FromStr + Debug>(var: T)
 </code>
 </pre>
 
-🙃
-
 It compiled! Time to see if it works...
 
 <pre>
-<code class='rust'>
-extern crate from_str_example;
+<code class='rust'>extern crate from_str_example;
 use from_str_example::TypeV3;
 
 fn main() {
@@ -270,5 +267,5 @@ that a user of your library has to add `use std::str::FromStr;` to their project
 to use yours.
 
 
-For any questions or if you have any insight around this post to offer, please
-do reach out on Twitter, I'm [@shnewto](https://twitter.com/shnewto).
+For any questions or if you have any insight around the subject of this post,
+please do reach out on Twitter, I'm [@shnewto](https://twitter.com/shnewto).
