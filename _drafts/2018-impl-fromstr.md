@@ -8,21 +8,22 @@ path: 2018/impl-fromstr
 
 ---
 
-I recently came across a head scratcher while working on a personal project
-in Rust. I wasn't able to find a ready solution that suited me so I worked it
-out on my own. Thought I'd share it because on one hand, it represents some
-interesting behavior and on the other, it might help someone that
-finds themselves in the same boat.
+I recently came across a head-scratcher while working on a personal project
+in Rust. I wasn't able to find a ready solution so I worked
+something out on my own. I decided to talk through my solution here because on
+one hand, the problem I encountered represents behavior I hadn't seen before
+and would be interested in conversation around it. On the other, it might help
+someone that finds themselves in the same boat.
 
 The general problem arose while exploring the `FromStr` trait. I wanted to
 implement it for my own type but ran into a pesky issue. Implementing the
 `FromStr` trait for my type required that applications using my library include
-a `use std::str::FromStr;` to actually use it. Lets get started with some
+a `use std::str::FromStr;` to actually use it. Let's get started with some
 context. This hadn't been my experience with implementing traits in the past,
-the `Display` and  `Iterator` traits for example have no such corresponding
+the `Display` and  `Iterator` traits, for example, have no such corresponding
 requirement.
 
-Lets call my libary `from_str_example` and boil things down into the `FromStr`
+We'll call my library `from_str_example` and boil things down into the `FromStr`
 trait as follows.
 
 ## Part 1: TypeV1
@@ -82,7 +83,7 @@ error: Could not compile `myapp`.
 </code>
 </pre>
 
-Okay. I trust the compiler. Lets add the `use` it recommends.
+Okay. I trust the compiler. Let's add the `use` it recommends.
 
 <pre>
 <code class='rust'>extern crate from_str_example;
@@ -103,8 +104,8 @@ time to rethink. I can just implement my _own_ `from_str` for my type.
 
 ## Part 2: TypeV2
 
-So after a revsion, that we'll note by using `TypeV2` in this section, we have
-the following code in our libary.
+So after a revision, that we'll note by using `TypeV2` in this section, we have
+the following code in our library.
 
 <pre>
 <code class='rust'>
@@ -137,11 +138,11 @@ fn main() {
 </pre>
 
 Or rather, worked as I'd hoped _briefly_. My next issue arose when I wanted
-to write a generic function that expected the `FromStr` trait. Lets reduce
+to write a generic function that expected the `FromStr` trait. Let's reduce
 that function to an example. Forgive me the `where` clause, my intent is to
 provide as example, some code with meaningful output. If you decide you'd like
 to experiment, feel free to remove the `println!`s and revise the
-signature to `pub fn generic_print_function<T: FromStr>()`
+signature to `pub fn generic_print_function<T: FromStr>(_:T)`
 
 <pre>
 <code class='rust'>
@@ -194,8 +195,8 @@ To learn more, run the command again with --verbose.
 </code>
 </pre>
 
-Well damn, we just removed the implementation of `FromStr`. Desparate times,
-they call for desparate measures.
+Well damn, we just removed the implementation of `FromStr`. Desperate times,
+they call for desperate measures.
 
 ## Part 3: TypeV3
 
@@ -210,7 +211,7 @@ it feels like I'm going out on a limb. But in Rust land, I've been
 empowered by the "hack without fear" mantra. I'm less twitchy and more open to
 looking for a fight because I've got the compiler at my back.
 
-Here's my approach using using `TypeV3` to indicate the shift.
+Here's my approach using `TypeV3` to indicate the shift.
 
 <pre>
 <code class='rust'>
@@ -244,7 +245,7 @@ pub fn generic_print_function<T: FromStr + Debug>(var: T)
 
 🙃
 
-It compiled! Lets see if it works...
+It compiled! Time to see if it works...
 
 <pre>
 <code class='rust'>
@@ -259,11 +260,15 @@ fn main() {
 </code>
 </pre>
 
-It does work! Recapping for anyone scanning for the words __fix__ or
-__success__, implement the trait `FromStr` _as well as_ a function called
-`from_str` for your custom type. This allows you to sidestep the requirement
+It does work! And in my personal project, this is the approach I took.
+
+
+Recapping for anyone scanning for the words __fix__ or __success__, implement
+the trait `FromStr` _as well as_ a function called `from_str` for your custom
+type. This allows you to sidestep the requirement
 that a user of your library has to add `use std::str::FromStr;` to their project
 to use yours.
 
-For any questions or if you have any insight to offer into this issue, please
+
+For any questions or if you have any insight around this post to offer, please
 do reach out on Twitter, I'm [@shnewto](https://twitter.com/shnewto).
