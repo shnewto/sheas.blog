@@ -11,18 +11,18 @@ path: 2018/impl-fromstr
 I recently came across a head-scratcher while working on a personal project
 in Rust. I wasn't able to find a ready solution so I worked
 something out on my own. I decided to talk through my solution here for a few
-reasons. The problem I encountered represents behavior I hadn't seen before, 
-it's something I learned from and am interested in some conversation around it. 
+reasons. The problem I encountered represents behavior I hadn't seen before,
+it's something I learned from and am interested in some conversation around it.
 I also think it might help someone who finds themselves in the same boat.
 
 The general problem arose while exploring the `FromStr` trait. I wanted to
 implement it for my own type but ran into a pesky issue. Implementing the
 `FromStr` trait for my type required that applications using my library include
-a `use std::str::FromStr;` to actually use it. This hadn't been my experience 
-with implementing traits in the past, the `Display` and  `Iterator` traits, 
-for example, have no such corresponding requirement. 
+a `use std::str::FromStr;` to actually use it. This hadn't been my experience
+with implementing traits in the past, the `Display` and  `Iterator` traits,
+for example, have no such corresponding requirement.
 
-Let's get started with some context. We'll call my library `from_str_example` 
+Let's get started with some context. We'll call my library `from_str_example`
 and boil things down into the `FromStr` trait as follows.
 
 ## Part 1: TypeV1
@@ -268,3 +268,12 @@ to use yours.
 
 For any questions or if you have any insight around the subject of this post,
 reach out on Twitter, I'm [@shnewto](https://twitter.com/shnewto).
+
+**UPDATE (01.23.2018):
+As noted by [@steveklabnik](https://twitter.com/steveklabnik/status/955877476370206721)
+and a handful of users on [/r/rust/](https://www.reddit.com/r/rust/comments/7sgj0a/implementing_fromstr/) the
+initial example presented with `TypeV1` will work without an extra `use` statement if
+a user opts for `str::parse` rather than using `TypeV1::from_str` directly.
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">you can do this by just implementing `FromStr`! The key is <a href="https://t.co/EAgc0lIPXA">https://t.co/EAgc0lIPXA</a><br><br>you could write this: <a href="https://t.co/kc5ehwett2">https://t.co/kc5ehwett2</a></p>&mdash; Some(@steveklabnik) (@steveklabnik) <a href="https://twitter.com/steveklabnik/status/955877476370206721?ref_src=twsrc%5Etfw">January 23, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
