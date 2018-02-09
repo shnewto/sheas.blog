@@ -17,7 +17,7 @@ Active member:
 * [PDXnode](https://www.meetup.com/pdxnode/)
 
 More:
-* [Github](http://github.com/snewt/)
+* [Github](https://github.com/shnewto)
 * [Twitter](https://twitter.com/shnewto/)
 * [LinkedIn](https://www.linkedin.com/in/sheanewton/)
 
