@@ -22,4 +22,4 @@ More:
 * [LinkedIn](https://www.linkedin.com/in/sheanewton/)
 
 Blog source:
-* [blog.sheanewton.com repo](https://github.com/snewt/blog.sheanewton.com)
+* [sheas.blog](https://github.com/snewt/sheas.blog)
