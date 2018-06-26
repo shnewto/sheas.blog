@@ -68,7 +68,7 @@ quickcheck to generate random c header files and then tries to parse them".).
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">bindgen uses quickcheck to generate random c header files and then tries to parse them <a href="https://t.co/HYftqPra7L">https://t.co/HYftqPra7L</a></p>&mdash; Some(@steveklabnik) (@steveklabnik) <a href="https://twitter.com/steveklabnik/status/939238891118350337?ref_src=twsrc%5Etfw">December 8, 2017</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Check [this gist](https://gist.github.com/snewt/1b0ca76207139681d98b4d709b8c09ed) 
+Check [this gist](https://gist.github.com/shnewto/1b0ca76207139681d98b4d709b8c09ed) 
 for a peek into what a couple randomly generated C headers look like.
 
 While unable to meet the goal of uncovering 
