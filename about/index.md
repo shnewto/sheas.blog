@@ -10,7 +10,7 @@ tests.
 
 Education:
 * B.A. Philosophy, University of Oregon.
-* B.S. Computer Science, University of Oregon.
+* B.S. Computer Science, University of Idaho.
 
 Active member:
 * [PDXRust](https://www.meetup.com/PDXRust/)
