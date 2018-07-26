@@ -21,6 +21,7 @@ Publications:
 Active member:
 
 * [PDXRust](https://www.meetup.com/PDXRust/)
+* [Portland Python User Group](https://www.meetup.com/pdxpython/)
 * [PDXnode](https://www.meetup.com/pdxnode/)
 
 More:
