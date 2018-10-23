@@ -4,9 +4,9 @@ route: about
 static: true
 ---
 
-Most recently a Client Services Engineer at [PolySync](https://polysync.io/)
-in Portland, Oregon. Writes code generation tools, sensor drivers, property
-tests.
+Software developer at [ActiveState](https://www.activestate.com/).
+<br>
+Working from Portland, Oregon.
 
 Education:
 
