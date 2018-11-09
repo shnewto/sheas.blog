@@ -9,3 +9,6 @@ PDX Python 2018:
 
 PDXRust 2018:
 * [Writing Software That's Safe Enough  To Drive A Car](talks/2018/writing_software_safe_enough_pdxrust_jul_2018.pdf)
+
+SeaGL 2018:
+* [It's properties all the way down! Narrowing in on a property test's input space.](talks/2018/properties_all_the_way_down_seagl2018.pdf)
