@@ -1,0 +1,8 @@
+baseURL = "http://sheas.blog/"
+languageCode = "en-us"
+title = "shea's blog"
+theme = "tale"
+
+
+[Author]
+    name = "Shea Newton"
