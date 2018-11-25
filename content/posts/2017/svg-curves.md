@@ -1,11 +1,14 @@
 ---
-title: SVG Curves
+title: "SVG Curves"
 draft: false
 date: 2017-11-26T21:45:00-08:00
 ---
 
 Exploring how to incorporate some JavaScript into a blog post.
 
+<!--more-->
+
+{{< html >}}
 <head>
 <script>
 function drawPath() {
@@ -22,16 +25,18 @@ function togglePathVisibility() {
 </script>
 </head>
 
+{{< /html >}}
 Click the space below to toggle the Bezier curve.
+{{< html >}}
 <br>
 <svg class="SvgArea" onclick="togglePathVisibility();" xmlns="http://www.w3.org/2000/svg;">
     <path class="Path" id="svgpath"/>
     <script>drawPath()</script>
 </svg>
 <br><br>
-Source available 
-<a href="https://github.com/shnewto/sheas.blog/blob/master/posts/2017-svg-curves.liquid">
-here</a>.
+{{< /html >}}
+
+{{< html >}}
 <style>
 .Path {
     display: block;
@@ -53,3 +58,8 @@ here</a>.
     }
 }
 </style>
+
+{{< /html >}}
+
+
+Source available [here](https://github.com/shnewto/sheas.blog/blob/master/posts/2017-svg-curves.liquid).

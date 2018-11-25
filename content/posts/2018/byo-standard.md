@@ -53,10 +53,9 @@ There are at least two options for exploring a Rust program's AST. The `-Z ast-j
 flag passed to rustc helps with getting a feel for the general look
 and structure of the AST. Using it looks like this:
 
-<pre>
-<code class='bash'>rustc src/main -Z ast-json
-</code>
-</pre>
+```bash
+rustc src/main -Z ast-json
+```
 
 This post uses print statements as they provide context about when the data
 we’re looking for is accessible (i.e. is `EarlyLintPass` or `LateLintPass` right
@@ -65,22 +64,20 @@ information that can be a little more parsable.
 
 First, make sure you're using the nightly toolchain:
 
-<pre>
-<code class='bash'>rust default nightly
-</code>
-</pre>
+```bash
+rust default nightly
+```
 
 Now setup a clean linting crate, here named `customlints`:
 
-<pre>
-<code class='bash'>cargo init customlints --lib
-</code>
-</pre>
+```bash
+cargo init customlints --lib
+```
 
 Next, we’ll do some setup in the `customlints/src/lib.rs` file.
 
-<pre>
-<code class='rust'>#![feature(plugin_registrar)]
+```rust
+#![feature(plugin_registrar)]
 #![feature(box_syntax, rustc_private)]
 #![feature(macro_vis_matcher)]
 
@@ -91,7 +88,11 @@ extern crate syntax;
 extern crate syntax_pos;
 
 use rustc::hir;
-use rustc::lint::{EarlyContext, EarlyLintPassObject, LateContext, LateLintPassObject, LintArray, LintContext, LintPass};
+use rustc::lint::{
+    EarlyContext, EarlyLintPassObject, 
+    LateContext, LateLintPassObject,
+    LintArray, LintContext, LintPass,
+};
 use rustc_plugin::Registry;
 use syntax::ast;
 
@@ -99,65 +100,73 @@ struct EarlyPass;
 struct LatePass;
 
 impl LintPass for LatePass {
-   fn get_lints(&self) -> LintArray {
-       lint_array!() // We'll get to this later, kind of...
-   }
+    fn get_lints(&self) -> LintArray {
+        // We'll get to this later, kind of...
+        lint_array!() 
+    }
 }
 
-impl LintPass for EarlyPass` {
-   fn get_lints(&self) -> LintArray {
-       lint_array!() // We'll definitely get to this later!
-   }
+impl LintPass for EarlyPass {
+    fn get_lints(&self) -> LintArray {
+        // We'll definitely get to this later!
+        lint_array!() 
+    }
 }
 
 #[plugin_registrar]
 pub fn register_plugins(reg: &mut Registry) {
-   reg.register_early_lint_pass(box EarlyPass as EarlyLintPassObject);
-   reg.register_late_lint_pass(box LatePass as LateLintPassObject);
+    reg.register_early_lint_pass(
+        box EarlyPass as EarlyLintPassObject);
+    reg.register_late_lint_pass(
+        box LatePass as LateLintPassObject);
 }
-</code>
-</pre>
+```
 
 Now, we can implement `rustc::lint::EarlyLintPass` and
 `rustc::lint::LateLintPass` for some preliminary examination.
 
-<pre>
-<code class='rust'>impl rustc::lint::EarlyLintPass for EarlyPass {
-   fn check_expr(&mut self, cx: &EarlyContext, expr: &ast::Expr) {
+```rust
+impl rustc::lint::EarlyLintPass 
+for EarlyPass {
+   fn check_expr(
+       &mut self, 
+       cx: &EarlyContext, 
+       expr: &ast::Expr) {
        println!("Early pass, expression: {:?}", expr);
    }
 }
 
-impl<'a, 'tcx> rustc::lint::LateLintPass<'a, 'tcx> for LatePass {
-   fn check_expr(&mut self, cx: &LateContext<'a, 'tcx>, expr: &'tcx hir::Expr) {
+impl<'a, 'tcx> rustc::lint::LateLintPass<'a, 'tcx> 
+for LatePass {
+   fn check_expr(
+       &mut self, 
+       cx: &LateContext<'a, 'tcx>, 
+       expr: &'tcx hir::Expr) {
        println!("Late pass, expression: {:?}", expr);
    }
 }
-</code>
-</pre>
+```
 
 In order to incorporate this exploratory plugin, we can create another crate, a
 `[[bin]]` this time:
 
-<pre>
-<code class='bash'>cargo init example --bin
-</code>
-</pre>
+```bash
+cargo init example --bin
+```
 
 Then point to our linter in that project's Cargo.toml. (Note the `optional = true`
 , we’ll revisit that later.):
 
-<pre>
-<code class='toml'>[dependencies.customlints]
+```toml
+[dependencies.customlints]
 path = "/path/to/customlints"
 optional = true
-</code>
-</pre>
+```
 
 Next, we can fill in the main function:
 
-<pre>
-<code class='rust'>#![cfg_attr(feature="customlints", feature(plugin))]
+```rust
+#![cfg_attr(feature="customlints", feature(plugin))]
 #![cfg_attr(feature="customlints", plugin(customlints))]
 
 fn main() {
@@ -167,54 +176,44 @@ fn main() {
    // This is what we want to prohibit!
    let _a = x[10];
 }
-</code>
-</pre>
+```
 
 Time to build. Note that the dependency on the customlints crate is optional, so it needs to be enabled in the build command:
 
-<pre>
-<code class='bash'>cargo build --features "customlints"
-</code>
-</pre>
-
+```bash
+cargo build --features "customlints"
+```
 
 Looking closely, we can see what looks like our indexing operation in our output. Here's one:
 
-<pre>
-<code class='bash'>Early pass, expression: expr(13: x[10])
-</code>
-</pre>
+```bash
+Early pass, expression: expr(13: x[10])
+```
 
 And later, another:
 
-<pre>
-<code class='bash'>Late pass, expression: expr(13: x[10])
-</code>
-</pre>
+```bash
+Late pass, expression: expr(13: x[10])
+```
 
 Now, we can modify our print statements in order to unpack the `hir::Expr` a bit more:
 
-<pre>
-<code class='rust'>println!("Early pass, expression node: {:?}", expr.node);
-</code>
-</pre>
+```rust
+println!("Early pass, expression node: {:?}", expr.node);
+```
 
 To minimize noise, we can comment out our late pass output:
 
-<pre>
-<code class='rust'>// println!("Late pass, expression node: {:?}", expr.node);
-</code>
-</pre>
-
+```rust
+// println!("Late pass, expression node: {:?}", expr.node);
+```
 
 After building our `[[bin]]` project again, there's some information that looks
 promising, the following `Index` type that contains `x` and `10`:
 
-<pre>
-<code class='bash'>Early pass, expression node: Index(expr(11: x), expr(12: 10))
-</code>
-</pre>
-
+```bash
+Early pass, expression node: Index(expr(11: x), expr(12: 10))
+```
 
 ## Enforcing a Lint
 
@@ -224,43 +223,47 @@ the lint with a `Deny` qualification. This means a program that indexes will
 fail to compile, but if necessary, can be allowed with
 `#![allow(indexing_lint)]`.
 
-<pre>
-<code class='rust'>declare_lint!(INDEXING_LINT, Deny, "Deny indexing operations.");
-</code>
-</pre>
+```rust
+declare_lint!(INDEXING_LINT, Deny, "Deny indexing operations.");
+```
 
 Then, we'll populate that empty `lint_array` in the `impl LintPass for EarlyPass`
 that we mentioned earlier.
 
-<pre>
-<code class='rust'>impl LintPass for EarlyPass {
+```rust
+impl LintPass for EarlyPass {
    fn get_lints(&self) -> LintArray {
        lint_array!(INDEXING_LINT)
    }
 }
-</code>
-</pre>
+```
 
 Finally, we can define when our lint occurs (any occurance of the `Index` type)
 and the report it provides. Replace that `EarlyPass` print statement as follows
 (feel free to remove the references to `LatePass`, we're only going to use
 `EarlyPass` from here on out):
 
-<pre>
-<code class='rust'>impl rustc::lint::EarlyLintPass for EarlyPass {
-   fn check_expr(&mut self, cx: &EarlyContext, expr: &ast::Expr) {
+```rust
+impl rustc::lint::EarlyLintPass 
+for EarlyPass {
+   fn check_expr(
+       &mut self, 
+       cx: &EarlyContext, 
+       expr: &ast::Expr) {
        if let ast::ExprKind::Index(_ , _) = expr.node {
-           cx.span_lint(INDEXING_LINT, expr.span, "Indexing operations disallowed!");
+           cx.span_lint(
+               INDEXING_LINT, 
+               expr.span, 
+               "Indexing operations disallowed!");
        }
    }
 }
-</code>
-</pre>
+```
 
 After building our `[[bin]]` project again, tada!
 
-<pre>
-<code class='bash'>error: Indexing operations disallowed!
+```bash
+error: Indexing operations disallowed!
 --> src/main.rs:6:14
   |
 6 |     let _a = x[10];
@@ -268,8 +271,7 @@ After building our `[[bin]]` project again, tada!
   |
  = note: #[deny(indexing_lint)] on by default
 error: aborting due to previous error
-</code>
-</pre>
+```
 
 We've implemented a lint.
 
@@ -284,26 +286,35 @@ Sure enough, we're denying behavior we've decided we don't want to. By putting
 our print statement back we can take another look at some debugging output
 (informed by the `syntax::ast::ExprKind`).
 
-<pre>
-<code class='bash'>impl rustc::lint::EarlyLintPass for EarlyPass {
-   fn check_expr(&mut self, cx: &EarlyContext, expr: &ast::Expr) {
-       if let ast::ExprKind::Index(_, ref e) = expr.node {
-           println!("Early pass, expression node: {:?}", e.node);
-           // cx.span_lint(INDEXING_LINT, expr.span, "Indexing operations disallowed!");
+```rust
+impl rustc::lint::EarlyLintPass 
+for EarlyPass {
+   fn check_expr(
+       &mut self, 
+       cx: &EarlyContext, 
+       expr: &ast::Expr) {
+       if let ast::ExprKind::Index(_, ref e) = 
+       expr.node {
+           println!(
+               "Early pass, expression node: {:?}", 
+               e.node);
+           // cx.span_lint(
+           //    INDEXING_LINT, 
+           //    expr.span, 
+           //    "Indexing operations disallowed!");
        }
    }
 }
-</code>
-</pre>
+```
 
 That provides the following:
 
-<pre>
-<code class='bash'>Early pass, expression node: Lit(Spanned { node: Int(10, Unsuffixed), span: Span { lo: BytePos(167), hi: BytePos(169), ctxt: #0 } })
+```bash
+Early pass, expression node: Lit(Spanned { node: Int(10, Unsuffixed), \
+span: Span { lo: BytePos(167), hi: BytePos(169), ctxt: #0 } })
 
 Early pass, expression node: Range(None, None, HalfOpen)
-</code>
-</pre>
+```
 
 But what do we do with that? One option is experimenting with our `[[bin]]`
 project to see if we can get some more context. This can be achieved with a few
@@ -311,8 +322,7 @@ more indexing operations.
 
 Here's the `main` function.
 
-<pre>
-<code class='rust'>
+```rust
 fn main() {
    let x = vec![0;1];
    let _a = x[10];
@@ -321,68 +331,73 @@ fn main() {
    let _d = &x[10..100];
    let _e = &x[..];
 }
-</code>
-</pre>
+```
 
 Now let's look at the output and see what we can tell.
 
 Because of the `Int(10, Unsuffixed)`, it looks like it corresponds to `let _a = x[10];`:
 
-<pre>
-<code class='bash'>Early pass, expression node: Lit(Spanned { node: Int(10, Unsuffixed), span: Span { lo: BytePos(167), hi: BytePos(169), ctxt: #0 } })
-</code>
-</pre>
+```bash
+Early pass, expression node: Lit(Spanned { node: Int(10, Unsuffixed), \
+span: Span { lo: BytePos(167), hi: BytePos(169), ctxt: #0 } })
+```
 
 Assuming the output occurs in the same order as the indexing operations in the
 source code, `&x[..]` probably corresponds to:
 
-<pre>
-<code class='bash'>Early pass, expression node: Range(None, None, HalfOpen)
-</code>
-</pre>
+```bash
+Early pass, expression node: Range(None, None, HalfOpen)
+```
 
 and `&x[10..]` to:
 
-<pre>
-<code class='bash'>Early pass, expression node: Range(Some(expr(23: 10)), None, HalfOpen)
-</code>
-</pre>
+```bash
+Early pass, expression node: Range(Some(expr(23: 10)), None, HalfOpen)
+```
 
 and `&x[..10]` to:
 
-<pre>
-<code class='bash'>Early pass, expression node: Range(None, Some(expr(30: 10)), HalfOpen)
-</code>
-</pre>
+```bash
+Early pass, expression node: Range(None, Some(expr(30: 10)), HalfOpen)
+
+```
 
 and `&x[10..100]` to:
 
-<pre>
-<code class='bash'>Early pass, expression node: Range(Some(expr(37: 10)), Some(expr(38: 100)), HalfOpen)
-</code>
-</pre>
+```bash
+Early pass, expression node: Range(Some(expr(37: 10)), \
+Some(expr(38: 100)), HalfOpen)
+```
 
 The first two values in that `Range` type correspond to `Some` if there is a
 position defined and `None` if there isn't. We still need to disallow cases
 where there is potential for out-of-bounds access (all but the last case), so
 the next step ends up looking like the following:
 
-<pre>
-<code class='rust'>impl rustc::lint::EarlyLintPass for `EarlyPass` {
-   fn check_expr(&mut self, cx: &EarlyContext, expr: &ast::Expr) {
-       if let ast::ExprKind::Index(_, ref e) = expr.node {
+```rust
+impl rustc::lint::EarlyLintPass 
+for EarlyPass {
+   fn check_expr(
+       &mut self, 
+       cx: &EarlyContext, 
+       expr: &ast::Expr) {
+       if let ast::ExprKind::Index(_, ref e) =
+       expr.node {
            match e.node {
-               ast::ExprKind::Range(None, None, _) => (),  // allow &[..]
+               ast::ExprKind::Range(
+                   None, None, _
+                   ) => (),  // allow &[..]
                _ => {
-                   cx.span_lint(INDEXING_LINT, expr.span,
-                   "Indexing operations disallowed.");
+                   cx.span_lint(
+                       INDEXING_LINT, 
+                       expr.span,
+                       "Indexing operations disallowed.");
                }
            }
        }
    }
 }
-</code>
-</pre>
+```
 
 And that did it! All that’s left are the errors for the behavior we decided to
 deny.
@@ -407,37 +422,32 @@ on a stable toolchain.
 
 First, the `customlints` dependency needs be optional in your Cargo.toml:
 
-<pre>
-<code class='toml'>[dependencies.customlints]
+```toml
+[dependencies.customlints]
 path = "/<path>/<to>/customlints"
 optional = true
-</code>
-</pre>
+```
 
 Then, any project that's subject to your custom lints can use `cfg_attr` to
 ensure the linting plugin isn't enabled unless the customlints feature is
 specified:
 
-<pre>
-<code class='rust'>[#![cfg_attr(feature="customlints", feature(plugin))]
-
+```rust
+[#![cfg_attr(feature="customlints", feature(plugin))]
 #![cfg_attr(feature="customlints", plugin(customlints))]
-</code>
-</pre>
+```
 
 Using that set up, a nightly build can be invoked with:
 
-<pre>
-<code class='bash'>cargo build --features "customlints"
-</code>
-</pre>
+```bash
+cargo build --features "customlints"
+```
 
 and a stable build with:
 
-<pre>
-<code class='bash'>cargo build
-</code>
-</pre>
+```bash
+cargo build
+```
 
 ## Additional Reading
 
