@@ -37,7 +37,7 @@ something written in Elm into the Cobalt tooling used to generate this blog.
 _Bob_ is the evidence that it's possible. He's an implementation of the
 [Bob in Elm](http://exercism.io/exercises/elm/bob/readme) exercise from 
 [exercism.io](http://exercism.io)
-(source available [here](https://github.com/shnewto/sheas.blog/blob/master/posts/Bob/Bob.elm), 
+(source available [here](https://github.com/shnewto/sheas.blog/blob/master/static/2017/Bob/Bob.elm), 
 don't look if you don't want it spoiled!).
 
 Major points to Cobalt because integration was pretty trivial. After generating 
