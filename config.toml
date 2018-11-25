@@ -1,0 +1,9 @@
+baseURL = ""
+relativeurls = true
+languageCode = "en-us"
+title = "shea's blog"
+description = "Wear your boots if you wander today."
+theme = "tale"
+
+[Author]
+    name = "Shea Newton"

@@ -1,4 +1,7 @@
 _site/
+public/
+resources/
+
 # Logs
 logs
 *.log
