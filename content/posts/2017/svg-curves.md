@@ -62,4 +62,4 @@ Click the space below to toggle the Bezier curve.
 {{< /html >}}
 
 
-Source available [here](https://github.com/shnewto/sheas.blog/blob/master/posts/2017-svg-curves.liquid).
+Source available [here](https://github.com/shnewto/sheas.blog/blob/master/content/posts/2017/svg-curves.md).
