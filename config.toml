@@ -1,13 +1,9 @@
-baseURL = "http://sheas.blog/"
+baseURL = ""
+relativeurls = true
 languageCode = "en-us"
 title = "shea's blog"
+description = "Wear your boots if you wander today."
 theme = "tale"
-
-# pygmentsUseClassic            = false
-# pygmentsCodeFences            = true
-# pygmentsCodeFencesGuessSyntax = true
-# pygmentsUseClasses            = true
-# pygmentsStyle = "monokai"
 
 [Author]
     name = "Shea Newton"
