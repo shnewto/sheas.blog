@@ -1,21 +1,20 @@
 ---
-title: Embedded Elm
+title: "Embedded Elm"
 draft: false
 date: 2017-12-12T11:17:00-08:00
 ---
 
-<p>
-Bob is a lackadaisical teenager. In conversation, his responses are very limited.
-<br>
-<li> Bob answers 'Sure.' if you ask him a question.
-<br>
-<li> He answers 'Whoa, chill out!' if you yell at him.
-<br>
-<li> He says 'Fine. Be that way!' if you address him without actually saying anything.
-<br>
-<li> He answers 'Whatever.' to anything else.
-</p>
 
+Bob is a lackadaisical teenager. In conversation, his responses are very limited.
+
+* Bob answers 'Sure.' if you ask him a question.
+* He answers 'Whoa, chill out!' if you yell at him.
+* He says 'Fine. Be that way!' if you address him without actually saying anything.
+* He answers 'Whatever.' to anything else.
+
+<!--more-->
+
+{{< html >}}
 <div id="elm"></div>
 
 <head>
@@ -27,36 +26,36 @@ Bob is a lackadaisical teenager. In conversation, his responses are very limited
 </head>
 
 <br>
+<hr>
 <br>
+{{< /html >}}
 
-<p>
+
 I've been interested in dipping my toes into the Elm language for some time
 and curious about whether it was possible / reasonable to integrate
 something written in Elm into the Cobalt tooling used to generate this blog.
-<br><br>
-<i>Bob</i> is the evidence that it's possible. He's an implementation of the
-<a href="http://exercism.io/exercises/elm/bob/readme">Bob in Elm</a>
-exercise from <a href="http://exercism.io">exercism.io</a> (source available
-<a href="https://github.com/shnewto/sheas.blog/blob/master/posts/Bob/Bob.elm">
-here</a>, don't look if you don't want it spoiled!).
+_Bob_ is the evidence that it's possible. He's an implementation of the
+[Bob in Elm](http://exercism.io/exercises/elm/bob/readme) exercise from 
+[exercism.io](http://exercism.io)
+(source available [here](https://github.com/shnewto/sheas.blog/blob/master/posts/Bob/Bob.elm), 
+don't look if you don't want it spoiled!).
 
 Major points to Cobalt because integration was pretty trivial. After generating 
-the JavaScript (<i>elm-make Bob.elm --output=some-filename.js</i>), it can be
-embedded in the raw HTML of a post's <i>.liquid</i> file like any other 
-<i>.js</i> file. Or almost. The HTML + Elm was accomplished 
+the JavaScript (`elm-make Bob.elm --output=some-filename.js`), it can be
+embedded in the raw HTML of a post's `.liquid` file like any other 
+`.js` file. Or almost. The HTML + Elm was accomplished 
 as follows:
 
-<pre>
-<code>&lt;div id="elm"&gt;&lt;/div&gt;
-&lt;head&gt;
-    &lt;script src="/assets/2017/embedded-elm.js"&gt;&lt;/script&gt;
-	&lt;script&gt;
-		var node = document.getElementById('elm');
-		var app = Elm.Bob.embed(node);
-	&lt;/script&gt;
-&lt;/head&gt;
-</code>
-</pre>
+```html
+<div id="elm"></div>
+<head>
+    <script src="/assets/2017/embedded-elm.js"></script>
+    <script>
+        var node = document.getElementById('elm');
+        var app = Elm.Bob.embed(node);
+    </script>
+</head>
+```
 
 Learning enough Elm to make something happen was the difficulty. I love
 language learning tooling like <a href="http://exercism.io">exercism.io</a> so 
@@ -76,8 +75,8 @@ glean from the first couple <a href="http://exercism.io">exercism.io</a>
 exercises. Things like the following code block that I can't say I fully grok 
 so am likely to revisit for any future Elm application I write.
 
-<pre>
-<code>type Msg
+```elm
+type Msg
     = NewInput String
     | Said
 
@@ -94,8 +93,7 @@ main =
         , update = update
         , subscriptions = (\x -> Sub.none)
         }
-</code>
-</pre>
+```
 
 So check out the source and experiment with <i>Bob</i> if you're interested in Elm 
 too. If you're someone with experience and have suggestions on

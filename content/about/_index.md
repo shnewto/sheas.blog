@@ -3,9 +3,7 @@ title: "about me"
 description: "Some links for reference."
 ---
 
-Software developer at [ActiveState](https://www.activestate.com/).
-<br>
-Working from Portland, Oregon.
+**Software developer at [ActiveState](https://www.activestate.com/), working from Portland, Oregon.**
 
 Education:
 

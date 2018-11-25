@@ -1,5 +1,5 @@
 ---
-title: cobalt.rs and now
+title: "cobalt.rs and now"
 draft: false
 date: 2017-11-26T15:05:00-08:00
 ---
