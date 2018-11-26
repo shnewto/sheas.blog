@@ -6,7 +6,7 @@ theme = "tale"
 
 [params]
     description = "Wear your boots if you wander today."
-    og_image = "/img/me.jpg"
+    og_image = "/img/logo.jpg"
 
 [Author]
     name = "Shea Newton"
