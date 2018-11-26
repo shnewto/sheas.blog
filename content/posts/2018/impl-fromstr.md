@@ -1,5 +1,6 @@
 ---
 title: "Implementing FromStr"
+description: "Experiments with redundant trait implementation."
 draft: false
 date: 2018-01-22T10:15:00-08:00
 ---

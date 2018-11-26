@@ -1,5 +1,6 @@
 ---
 title: "SVG Curves"
+description: "What. do. you. know. It works!"
 draft: false
 date: 2017-11-26T21:45:00-08:00
 ---
