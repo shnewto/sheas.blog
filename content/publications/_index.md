@@ -1,6 +1,6 @@
 ---
 title: "publications"
-description: "Papers, etc."
+description: "Some papers with my name on them."
 ---
 
 * S. Newton, N. Aschbacher, [__The Challenge of Using C in Safety-Critical Applications__](/papers/The_Challenge_of_Using_C_in_Safety_Critical_Applications.pdf), 1–7 (2018).
