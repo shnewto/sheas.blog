@@ -1,5 +1,6 @@
 ---
 title: "The Rust impl period and me"
+descriptions: "Some thoughts on participation."
 draft: false
 date: 2018-01-08T08:00:00-08:00
 ---

@@ -1,5 +1,6 @@
 ---
 title: "cobalt.rs and now"
+description: "Getting off the ground."
 draft: false
 date: 2017-11-26T15:05:00-08:00
 ---

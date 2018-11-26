@@ -1,5 +1,6 @@
 ---
 title: "BYO Standard: An Explorer's Guide to Compiler Plugins"
+description: "Writing rustc compiler plugins."
 draft: false
 date: 2018-07-10T20:00:00-08:00
 ---
