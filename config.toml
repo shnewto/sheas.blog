@@ -2,8 +2,11 @@ baseURL = ""
 relativeurls = true
 languageCode = "en-us"
 title = "shea's blog"
-description = "Wear your boots if you wander today."
 theme = "tale"
+
+[params]
+    description = "Wear your boots if you wander today."
+    og_image = "/img/me.jpg"
 
 [Author]
     name = "Shea Newton"
