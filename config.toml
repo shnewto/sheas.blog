@@ -5,7 +5,7 @@ title = "shea's blog"
 theme = "tale"
 
 [params]
-    description = "Wear your boots if you wander today."
+    description = "This is the genre of art I make now."
     og_image = "/img/logo.jpg"
 
 [Author]
