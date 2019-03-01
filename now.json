@@ -1,0 +1,19 @@
+{
+    "name": "sheas.blog",
+    "version": 2,
+    "alias": [
+        "sheas.blog",
+        "www.sheas.blog",
+        "sheas.space",
+        "www.sheas.space",
+        "sheanewton.com",
+        "blog.sheanewton.com",
+        "www.sheas.blog"
+    ],
+    "builds": [
+        {
+            "src": "package.json",
+            "use": "@now/static-build"
+        }
+    ]
+}
