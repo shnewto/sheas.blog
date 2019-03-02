@@ -1,4 +1,4 @@
-baseURL = ""
+baseURL = "/"
 relativeurls = true
 languageCode = "en-us"
 title = "shea's blog"
