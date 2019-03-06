@@ -1,13 +1,37 @@
-baseURL = ""
+
+baseurl = "/"
 relativeURLs = true
-uglyURLs = true
-languageCode = "en-us"
+theme = "cocoa-eh"
+builddrafts = false
+contentdir = "content"
+languageCode = "en-US"
+layoutdir = "layouts"
+publishdir = "public"
+author = "Shea Newton"
 title = "shea's blog"
-theme = "tale"
+disqusshortname = ""
+pluralizelisttitles = false
+
+[permalinks]
+blog = "blog/:slug/"
 
 [params]
-    description = "This is the genre of art I make now."
-    og_image = "/img/logo.jpg"
-
-[Author]
-    name = "Shea Newton"
+description = "This is the genre of art I make now."
+og_image = "img/logo.jpg"
+dateform = "Jan 2, 2006"
+dateformfull = "Mon Jan 2 2006 15:04:05 MST"
+copyright = "Copyright © 2017 Shea Newton"
+logofile = ""
+faviconfile = "img/logo.png"
+highlightjs = true
+progressively = true
+align_left = false
+lang = "en"
+github = "shnewto"
+email = "shnewto@gmail.com"
+linkedin = "sheanewton"
+twitter = "shnewto"
+social_banner = ""
+posts_navigation = true
+small_banner_logo = false
+latestpostcount = 5
