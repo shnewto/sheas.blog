@@ -1,4 +1,5 @@
 <head>
+    {{ partial "meta.html" . }}
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ if ne .URL "/" }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}" />
     <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
@@ -13,4 +14,5 @@
     <meta property="og:image:secure_url" content="{{ .Site.Params.og_image | absURL }}" />
     {{ end }}
     <meta property="og:type" content="website" />
+    {{ partial "head_includes.html" . }}
 </head>
