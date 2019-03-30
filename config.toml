@@ -17,7 +17,7 @@ blog = "blog/:slug/"
 
 [params]
 description = "This is the genre of art I make now."
-og_image = "/img/space-3.png"
+og_image = "/img/space-2.png"
 dateform = "Jan 2, 2006"
 dateformfull = "Mon Jan 2 2006 15:04:05 MST"
 copyright = "Copyright © 2017 Shea Newton"
