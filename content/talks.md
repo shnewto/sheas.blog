@@ -16,6 +16,6 @@ SeaGL 2018:
 
 * [It's properties all the way down! Narrowing in on a property test's input space.](/slides/2018/properties_all_the_way_down_seagl2018.pdf)
 
-PDX Python 2018:
+PDX Python 2019:
 
 * [The Super(stitious) Dev](/slides/2019/the_superstitious_dev.pdf)
