@@ -1,4 +1,9 @@
-# sheas.blog
-personal blog built with hugo. 
+[ [blog](/blog.md) ]  
+[ [about](/about.md) ]  
+[ [talks](/talks.md) ]  
+[ [publications](/publications.md) ]  
 
-[sheas.blog](https://sheas.blog)
+---
+
+![](/img/avalogo-small.png)
+
