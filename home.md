@@ -2,14 +2,14 @@
 
 ---
 
-[byo-standard](/post/byo-standard.html)  
+[byo-standard](/post/byo-standard.md)  
 
-[impl-fromstr](/post/impl-fromstr.html)  
+[impl-fromstr](/post/impl-fromstr.md)  
 
-[rust-impl-period](/post/rust-impl-period.html)  
+[rust-impl-period](/post/rust-impl-period.md)  
 
-[embedded-elm](/post/embedded-elm.html)  
+[embedded-elm](/post/embedded-elm.md)  
 
-[svg-curves](/post/svg-curves.html)  
+[svg-curves](/post/svg-curves.md)  
 
-[cobalt-and-now](/post/cobalt-and-now.html)
+[cobalt-and-now](/post/cobalt-and-now.md)
