@@ -1,9 +1,5 @@
----
-title: "Embedded Elm"
-description: "✨"
-draft: false
-date: 2017-12-12T11:17:00-08:00
----
+# Embedded Elm
+✨
 
 
 Bob is a lackadaisical teenager. In conversation, his responses are very limited.

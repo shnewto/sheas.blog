@@ -1,15 +1,8 @@
----
-title: "SVG Curves"
-description: "What. do. you. know. It works!"
-draft: false
-date: 2017-11-26T21:45:00-08:00
----
+# SVG Curves
+_What. do. you. know. It works!_
 
 Exploring how to incorporate some JavaScript into a blog post.
 
-<!--more-->
-
-{{< html >}}
 <head>
 <script>
 function drawPath() {
@@ -26,18 +19,14 @@ function togglePathVisibility() {
 </script>
 </head>
 
-{{< /html >}}
 Click the space below to toggle the Bezier curve.
-{{< html >}}
 <br>
 <svg class="SvgArea" onclick="togglePathVisibility();" xmlns="http://www.w3.org/2000/svg;">
     <path class="Path" id="svgpath"/>
     <script>drawPath()</script>
 </svg>
 <br><br>
-{{< /html >}}
 
-{{< html >}}
 <style>
 .Path {
     display: block;
@@ -59,8 +48,6 @@ Click the space below to toggle the Bezier curve.
     }
 }
 </style>
-
-{{< /html >}}
 
 
 Source available [here](https://github.com/shnewto/sheas.blog/blob/master/content/posts/2017/svg-curves.md).

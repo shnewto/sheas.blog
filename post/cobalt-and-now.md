@@ -1,9 +1,6 @@
----
-title: "cobalt.rs and now"
-description: "Getting off the ground."
-draft: false
-date: 2017-11-26T15:05:00-08:00
----
+# cobalt.rs and now
+_Getting off the ground_  
+
 
 Detailing the work of getting this blog put together using
 _[cobalt.rs](https://github.com/cobalt-org/cobalt.rs)_ and deploying

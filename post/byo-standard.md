@@ -1,9 +1,6 @@
----
-title: "BYO Standard: An Explorer's Guide to Compiler Plugins"
-description: "Writing rustc compiler plugins."
-draft: false
-date: 2018-07-10T20:00:00-08:00
----
+# BYO Standard: An Explorer's Guide to Compiler Plugins
+_Writing rustc compiler plugins_  
+
 
 The Rust programming language provides powerful guarantees around memory and
 thread safety. It also exposes all the knobs required for implementing custom

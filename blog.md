@@ -1,15 +1,15 @@
-
-### blog
+# shea's blog
 
 ---
-[byo-standard](./post/byo-standard.html)  
 
-[impl-fromstr](./post/impl-fromstr.html)  
+[byo-standard](/post/byo-standard.html)  
 
-[rust-impl-period](./post/rust-impl-period.html)  
+[impl-fromstr](/post/impl-fromstr.html)  
 
-[embedded-elm](./post/embedded-elm.html)  
+[rust-impl-period](/post/rust-impl-period.html)  
 
-[svg-curves](./post/svg-curves.html)  
+[embedded-elm](/post/embedded-elm.html)  
 
-[cobalt-and-now](./post/cobalt-and-now.html)  
+[svg-curves](/post/svg-curves.html)  
+
+[cobalt-and-now](/post/cobalt-and-now.html)

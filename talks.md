@@ -1,5 +1,3 @@
- [home](README.html) | [blog](blog.html) | [about](about.html) | [publications](publications.html)
-
 ### talks
 
 DeveloperWeek 2020:
