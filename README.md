@@ -1,4 +1,11 @@
-# sheas.blog
-personal blog built with hugo. 
+### Shea Longué
 
-[sheas.blog](https://sheas.blog)
+[ [blog](blog.md) ]  
+[ [about](about.md) ]  
+[ [talks](talks.md) ]  
+[ [publications](publications.md) ]  
+
+---
+
+![](img/avalogo-small.png)
+

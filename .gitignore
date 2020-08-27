@@ -1,6 +1,7 @@
 _site/
 public/
 resources/
+build/
 
 # Logs
 logs
