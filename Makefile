@@ -13,7 +13,7 @@ HTML_PRE="\
     </head> \
 <body> \
     <p> \
-        <a href=\"/blog.html\">blog</a>  \
+        <a href=\"/home.html\">home</a>  \
         | <a href=\"/about.html\">about</a>  \
         | <a href=\"/talks.html\">talks</a>  \
         | <a href=\"/publications.html\">publications</a> \
@@ -30,7 +30,7 @@ INDEX="\
 <html lang=\"en\"> \
     <head> \
         <meta charset=\"UTF-8\"> \
-		<meta http-equiv=\"refresh\" content=\"0; url=/blog.html\" /> \
+		<meta http-equiv=\"refresh\" content=\"0; url=/home.html\" /> \
     </head> \
 <body> \
 </body> \

@@ -1,4 +1,4 @@
-[ [blog](/blog.md) ]  
+[ [home](/home.md) ]  
 [ [about](/about.md) ]  
 [ [talks](/talks.md) ]  
 [ [publications](/publications.md) ]  
