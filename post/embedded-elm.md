@@ -9,13 +9,10 @@ Bob is a lackadaisical teenager. In conversation, his responses are very limited
 * He says 'Fine. Be that way!' if you address him without actually saying anything.
 * He answers 'Whatever.' to anything else.
 
-<!--more-->
-
-{{< html >}}
 <div id="elm"></div>
 
 <head>
-    <script src="/2017/embedded-elm.js"></script>
+    <script src="/res/elm/embedded-elm.js"></script>
 	<script>
 		var node = document.getElementById('elm');
 		var app = Elm.Bob.embed(node);
@@ -25,8 +22,6 @@ Bob is a lackadaisical teenager. In conversation, his responses are very limited
 <br>
 <hr>
 <br>
-{{< /html >}}
-
 
 I've been interested in dipping my toes into the Elm language for some time
 and curious about whether it was possible / reasonable to integrate

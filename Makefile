@@ -47,7 +47,7 @@ all: dirs post home process index
 
 dirs: 
 	mkdir -p build/post
-	cp -a papers slides style img build
+	cp -a papers slides style img res build
 
 home: $(HOMEHTML) 
 post: $(POSTHTML)

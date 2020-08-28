@@ -48,6 +48,3 @@ Click the space below to toggle the Bezier curve.
     }
 }
 </style>
-
-
-Source available [here](https://github.com/shnewto/sheas.blog/blob/master/content/posts/2017/svg-curves.md).
