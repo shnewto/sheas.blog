@@ -1,5 +1,5 @@
 # Implementing FromStr
-_Experiments with redundant trait implementation_
+_January, 2018_  
 
 I recently came across a head-scratcher while working on a personal project
 in Rust. I wasn't able to find a ready solution so I worked

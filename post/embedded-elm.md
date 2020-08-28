@@ -1,6 +1,7 @@
 # Embedded Elm
-✨
+_December, 2017_   
 
+✨  
 
 Bob is a lackadaisical teenager. In conversation, his responses are very limited.
 

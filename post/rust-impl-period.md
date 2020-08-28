@@ -1,5 +1,6 @@
 # The Rust impl period and me
-_Some thoughts on participation_
+_January, 2018_  
+
 
 The [Rust programming language](https://www.rust-lang.org) is a self-declared
 "systems programming language that runs blazingly fast, prevents segfaults, and

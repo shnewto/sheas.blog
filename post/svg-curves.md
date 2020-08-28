@@ -1,5 +1,8 @@
 # SVG Curves
-_What. do. you. know. It works!_
+_November, 2017_  
+
+
+What. do. you. know. It works!  
 
 Exploring how to incorporate some JavaScript into a blog post.
 

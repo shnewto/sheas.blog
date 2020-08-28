@@ -1,6 +1,5 @@
-# cobalt.rs and now
-_Getting off the ground_  
-
+# cobalt.rs and now 
+_November, 2017_
 
 Detailing the work of getting this blog put together using
 _[cobalt.rs](https://github.com/cobalt-org/cobalt.rs)_ and deploying

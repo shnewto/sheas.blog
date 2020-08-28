@@ -1,5 +1,5 @@
 # BYO Standard: An Explorer's Guide to Compiler Plugins
-_Writing rustc compiler plugins_  
+_July, 2018_  
 
 
 The Rust programming language provides powerful guarantees around memory and
