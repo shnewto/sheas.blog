@@ -2,14 +2,14 @@
 
 ---
 
-[byo-standard](/post/byo-standard.md) ⇁ _July, 2018_
+[byo-standard](/post/byo-standard.md) <small>| July, 2018</small>
 
-[impl-fromstr](/post/impl-fromstr.md) ⇁ _January, 2018_  
+[impl-fromstr](/post/impl-fromstr.md) <small>| January, 2018</small>
 
-[rust-impl-period](/post/rust-impl-period.md) ⇁ _January, 2018_  
+[rust-impl-period](/post/rust-impl-period.md) <small>| January, 2018</small>  
 
-[embedded-elm](/post/embedded-elm.md) ⇁ _December, 2017_  
+[embedded-elm](/post/embedded-elm.md) <small>| December, 2017</small>  
 
-[svg-curves](/post/svg-curves.md) ⇁ _November, 2017_  
+[svg-curves](/post/svg-curves.md) <small>| November, 2017</small>  
 
-[cobalt-and-now](/post/cobalt-and-now.md) ⇁ _November, 2017_  
+[cobalt-and-now](/post/cobalt-and-now.md) <small>| November, 2017</small>  
