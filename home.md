@@ -2,6 +2,8 @@
 
 ---
 
+[project-mode-elm-edition](/post/project-mode-elm.md) <small>| September, 2020</small>  
+
 [byo-standard](/post/byo-standard.md) <small>| July, 2018</small>
 
 [impl-fromstr](/post/impl-fromstr.md) <small>| January, 2018</small>
