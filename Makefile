@@ -25,6 +25,10 @@ HTML_POST="\
 </html> \
 "
 
+CONFIG_PRE='{"routes":['
+
+CONFIG_POST="]}"
+
 INDEX="\
 <!DOCTYPE html> \
 <html lang=\"en\"> \
@@ -44,10 +48,13 @@ POSTSRCS := $(wildcard post/*.md)
 POSTHTML := $(patsubst %.md,%.html,$(POSTSRCS))
 
 all: dirs post home process index
+	$(shell truncate -s-2 build/vercel.json)
+	@echo $(CONFIG_POST) >> build/vercel.json
 
 dirs: 
 	mkdir -p build/post
 	cp -a papers slides style img res build
+	@echo $(CONFIG_PRE) > build/vercel.json
 
 home: $(HOMEHTML) 
 post: $(POSTHTML)
@@ -56,17 +63,20 @@ $(HOMEHTML): $(HOMESRCS)
 	@echo $(HTML_PRE) > build/$@
 	$(PANDOC) $(basename $@).md >> build/$@
 	@echo  $(HTML_POST) >> build/$@
+	@echo '{ "src": "/$(basename $@)", "dest" : "/$@" },' >> build/vercel.json
 
 $(POSTHTML): $(POSTSRCS)
 	@echo $(HTML_PRE) > build/$@
 	$(PANDOC) $(basename $@).md >> build/$@
 	@echo  $(HTML_POST) >> build/$@
+	@echo '{ "src": "/$(basename $@)", "dest" : "/$@" },' >> build/vercel.json
 
 process: dirs
 	$(shell find . -type f -iname '*.html' -exec sed -i '' 's/.md/.html/' "{}" +;)
 
 index:
 	@echo $(INDEX) > build/index.html
+
 
 clean: 
 	rm -rf build *.html* post/*.html*
