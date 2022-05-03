@@ -1,5 +1,13 @@
 ### talks
 
+Enfuse.io Lunch and Learn 2022:
+
+- [Property Testing Spark Applications with Scala and Quickcheck](slides/2022/property_testing_spark_applications_with_scala_and_quickcheck_lunch_and_learn_01_12_2022.pdf)
+
+Enfuse.io Lunch and Learn 2021:
+
+- [Contributing to Open Source](slides/2021/contributing_to_open_source_lunch_and_learn_09_01_2021.pdf)
+
 DeveloperWeek 2020:
 
 - [Time machines, horror stories, and the future of dev tools](slides/2020/time_machines_horror_stories_and_the_future_of_dev_tools.pdf)
