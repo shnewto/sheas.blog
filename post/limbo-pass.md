@@ -7,7 +7,7 @@ For now, just some links.
 - [theme](https://soundcloud.com/wanderball/limbo-pass)
 
 
-someday I'll collect my thoughts about bevy and rapier and blender and what brought be here, to limbo pass.
+someday I'll collect my thoughts about bevy and rapier and blender and what brought me here, to limbo pass.
 
 
 there's at least enough for a blooper real of all the terrible ways I went wrong with physics and collision detection 😂
