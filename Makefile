@@ -6,13 +6,13 @@ HTML_PRE="\
 <html lang=\"en\"> \
     <head> \
 		<!-- Global site tag (gtag.js) - Google Analytics --> \
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115134123-1"></script> \
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-LB9P37G2G1"></script> \
 		<script> \
-  			window.dataLayer = window.dataLayer || []; \
-  			function gtag(){dataLayer.push(arguments);} \
-  			gtag('js', new Date()); \
+			window.dataLayer = window.dataLayer || []; \
+			function gtag(){dataLayer.push(arguments);} \
+			gtag('js', new Date()); \
  \
- 			gtag('config', 'UA-115134123-1'); \
+			gtag('config', 'G-LB9P37G2G1'); \
 		</script> \
  \
         <meta charset=\"UTF-8\"> \
