@@ -90,5 +90,4 @@ main =
 
 So check out the source and experiment with <i>Bob</i> if you're interested in Elm 
 too. If you're someone with experience and have suggestions on
-implementation, or you're a beginner like me with questions, feel to reach out.
-I'm <a href="https://twitter.com/shnewto">@shnewto</a> on Twitter.
+implementation, or you're a beginner like me with questions, feel to reach out at hello@shnewto.dev.

@@ -1,6 +1,6 @@
 ### about
 
-**Software engineer at [Enfuse.io](https://enfuse.io/), surrounded by sagebrush in the foothills of southern Idaho.**
+**Software engineer surrounded by sagebrush in the foothills of southern Idaho.**
 
 Education:
 
@@ -15,8 +15,11 @@ Publications:
 More:
 
 * [Github](https://github.com/shnewto)
-* [Twitter](https://twitter.com/shnewto/)
 * [LinkedIn](https://www.linkedin.com/in/sheanewton/)
+
+Email:
+
+* hello@shnewto.dev
 
 Blog source:
 

@@ -110,12 +110,12 @@ incredibly thorough and thoughtful feedback from
 For more info on implementation details I'll probably do a follow up 
 post, but in the meantime, if you're interested in knowing more about it check 
 out the conversations in the PRs linked to above or 
-reach out on Twitter, I'm [@shnewto](https://twitter.com/shnewto). 
+reach out at hello@shnewto.dev. 
 
 I'd like to offer a really enthusiastic thank you to the Rust community and 
 everyone involved in organizing and running the impl period for 2017. I'm glad 
 for the experience and look forward to engaging more. 
 
 Also, a huge thanks to [@craftloopz](https://twitter.com/craftloopz) for
-working with me through the drafts of this post. She's an amazing editor and 
+working with me through the drafts of this post. They're an amazing editor and 
 helped me shape something I'm glad to share.  

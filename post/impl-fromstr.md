@@ -247,8 +247,8 @@ that a user of your library has to add `use std::str::FromStr;` to their project
 to use yours.
 
 
-For any questions or if you have any insight around the subject of this post,
-reach out on Twitter, I'm [@shnewto](https://twitter.com/shnewto).
+For any questions or if you have any insight around the subject of this post, 
+or just to say hi, reach out at hello@shnewto.dev.
 
 **UPDATE (01.23.2018):
 As noted by [@steveklabnik](https://twitter.com/steveklabnik/status/955877476370206721)
