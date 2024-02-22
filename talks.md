@@ -1,5 +1,9 @@
 ### talks
 
+Google Cloud Developer Group Boise 2024:
+
+- [The Right String: Lols and Learnings while paring with CoPilot](slides/2024/the_right_string_lols_and_learnings_while_pairing_with_copilot.pdf)
+
 Enfuse.io Lunch and Learn 2022:
 
 - [Property Testing Spark Applications with Scala and Quickcheck](slides/2022/property_testing_spark_applications_with_scala_and_quickcheck_lunch_and_learn_01_12_2022.pdf)
