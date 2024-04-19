@@ -1,4 +1,5 @@
-[ [posts](/home.md) ]
+[ [home](/home.md) ]
+[ [posts](/posts.md) ]
 [ [about](/about.md) ]
 [ [talks](/talks.md) ]
 [ [publications](/publications.md) ]

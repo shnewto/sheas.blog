@@ -1,6 +1,8 @@
-### talks
+# talks
 
-Google Cloud Developer Group Boise 2024:
+---
+
+Google Developer Group (GDG Cloud) Boise 2024:
 
 - [The Right String: Lols and Learnings while paring with CoPilot](slides/2024/the_right_string_lols_and_learnings_while_pairing_with_copilot.pdf)
 

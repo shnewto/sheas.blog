@@ -1,4 +1,6 @@
-### about
+# about
+
+---
 
 **Software engineer surrounded by sagebrush in the foothills of southern Idaho.**
 

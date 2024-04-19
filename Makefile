@@ -22,11 +22,15 @@ HTML_PRE="\
         <link rel=\"stylesheet\" href=\"/style/style.css\"> \
     </head> \
 <body> \
+"
+
+HTML_NAV_BAR="\
     <p> \
-        <a href=\"/home.html\">home</a>  \
-        | <a href=\"/about.html\">about</a>  \
-        | <a href=\"/talks.html\">talks</a>  \
-        | <a href=\"/publications.html\">publications</a> \
+        [ <a href=\"/talks.html\">talks</a> ]  \
+        [ <a href=\"/about.html\">about</a> ]  \
+        [ <a href=\"/publications.html\">publications</a> ] \
+        [ <a href=\"/posts.html\">posts</a> ]  \
+        [ <a href=\"/home.html\">home</a> ] \
     </p> \
 "
 
@@ -51,13 +55,13 @@ INDEX="\
 </html> \
 "
 
-HOMESRCS := $(wildcard *.md)
-HOMEHTML := $(patsubst %.md,%.html,$(HOMESRCS))
+PAGESRCS := $(wildcard *.md)
+PAGEHTML := $(patsubst %.md,%.html,$(PAGESRCS))
 
 POSTSRCS := $(wildcard post/*.md)
 POSTHTML := $(patsubst %.md,%.html,$(POSTSRCS))
 
-all: dirs post home process index
+all: dirs page post process index
 	$(shell truncate -s-2 build/vercel.json)
 	@echo $(CONFIG_POST) >> build/vercel.json
 
@@ -66,17 +70,19 @@ dirs:
 	cp -a papers slides style img res build
 	@echo $(CONFIG_PRE) > build/vercel.json
 
-home: $(HOMEHTML) 
+page: $(PAGEHTML)
 post: $(POSTHTML)
 
-$(HOMEHTML): $(HOMESRCS)
+$(PAGEHTML): $(PAGESRCS)
 	@echo $(HTML_PRE) > build/$@
+	@echo  $(HTML_NAV_BAR) >> build/$@
 	$(PANDOC) $(basename $@).md >> build/$@
 	@echo  $(HTML_POST) >> build/$@
 	@echo '{ "src": "/$(basename $@)", "dest" : "/$@" },' >> build/vercel.json
 
 $(POSTHTML): $(POSTSRCS)
 	@echo $(HTML_PRE) > build/$@
+	@echo  $(HTML_NAV_BAR) >> build/$@
 	$(PANDOC) $(basename $@).md >> build/$@
 	@echo  $(HTML_POST) >> build/$@
 	@echo '{ "src": "/$(basename $@)", "dest" : "/$@" },' >> build/vercel.json
