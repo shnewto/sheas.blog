@@ -67,3 +67,4 @@ data.yml
 
 .vercel
 
+.env*.local
